@@ -3,194 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Board Game Audio Assistant</title>
+    <title>Privacy Policy — Board Game Audio Assistant</title>
+    <meta name="description" content="Privacy Policy for Board Game Audio Assistant iOS application. Information on data practices, advertising, microphone permissions, and local storage.">
+    <link rel="icon" type="image/png" href="assets/app_icon.png">
+    <link rel="stylesheet" href="index.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
+        .policy-container {
+            max-width: 860px;
+            margin: 48px auto;
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            padding: 40px;
+            border: 2px solid var(--border-strong);
+            border-radius: var(--radius-lg);
+            box-shadow: 6px 8px 0 var(--border-strong);
+            padding: 48px;
         }
-        
-        h1 {
-            color: #667eea;
-            margin-bottom: 10px;
-            font-size: 2.5em;
+
+        .policy-header {
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 24px;
+            margin-bottom: 32px;
         }
-        
-        .subtitle {
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 1.1em;
-        }
-        
-        .section {
-            margin-bottom: 30px;
-        }
-        
-        .section h2 {
-            color: #764ba2;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-        }
-        
-        .section p {
-            margin-bottom: 15px;
-            color: #555;
-        }
-        
-        .section ul {
-            margin-left: 20px;
-            color: #555;
-        }
-        
-        .section li {
+
+        .policy-title {
+            font-size: 2.6rem;
             margin-bottom: 8px;
         }
-        
-        .link {
-            color: #667eea;
-            text-decoration: none;
-            transition: color 0.3s;
+
+        .policy-meta {
+            font-size: 0.88rem;
+            color: var(--ink-muted);
+            font-family: 'JetBrains Mono', monospace;
         }
-        
-        .link:hover {
-            color: #764ba2;
-            text-decoration: underline;
+
+        .policy-section {
+            margin-bottom: 36px;
         }
-        
-        .footer {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            text-align: center;
-            color: #999;
-            font-size: 0.9em;
+
+        .policy-section h2 {
+            font-size: 1.45rem;
+            margin-bottom: 12px;
+            color: var(--accent-teal-dark);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 6px;
         }
-        
-        .last-updated {
-            color: #999;
-            font-size: 0.9em;
-            margin-bottom: 20px;
+
+        .policy-section p {
+            font-size: 0.96rem;
+            color: var(--ink-secondary);
+            line-height: 1.7;
+            margin-bottom: 14px;
+        }
+
+        .policy-section ul {
+            margin-left: 24px;
+            margin-bottom: 16px;
+        }
+
+        .policy-section li {
+            font-size: 0.95rem;
+            color: var(--ink-secondary);
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .policy-section strong {
+            color: var(--ink);
+        }
+
+        .policy-highlight-box {
+            background: var(--paper-bg);
+            border: 1.5px solid var(--border-strong);
+            border-radius: var(--radius-md);
+            padding: 18px 22px;
+            margin: 18px 0;
+            box-shadow: 2.5px 3px 0 var(--border-strong);
+        }
+
+        .btn-back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--ink);
+            color: white;
+            padding: 10px 20px;
+            border-radius: var(--radius-pill);
+            border: 1.5px solid var(--border-strong);
+            box-shadow: 2.5px 3px 0 var(--border-strong);
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: transform var(--transition-bounce);
+            margin-top: 20px;
+        }
+
+        .btn-back-home:hover {
+            transform: translate(-1px, -1px);
+            box-shadow: 3.5px 4px 0 var(--border-strong);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Privacy Policy</h1>
-        <p class="subtitle">Board Game Audio Assistant</p>
-        <p class="last-updated">Last Updated: November 2025</p>
-        
-        <div class="section">
-            <h2>Introduction</h2>
-            <p>
-                This Privacy Policy describes how Board Game Audio Assistant ("we", "our", or "the app") handles 
-                information when you use our iOS application. We are committed to protecting your privacy and 
-                ensuring transparency about our data practices.
-            </p>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container navbar">
+            <a href="index.html" class="brand">
+                <div class="brand-icon">
+                    <img src="assets/app_icon.png" alt="Board Game Audio Assistant" width="44" height="44">
+                </div>
+                <div class="brand-title">
+                    <span class="brand-name">Board Game Audio</span>
+                    <span class="brand-version">Privacy Policy</span>
+                </div>
+            </a>
+
+            <div class="nav-actions">
+                <a href="index.html" class="btn-nav-download" style="background: white; color: var(--ink) !important;">
+                    ← Back to Home
+                </a>
+            </div>
         </div>
-        
-        <div class="section">
-            <h2>Information We Collect</h2>
-            <p>We collect minimal data to improve the app experience:</p>
-            <ul>
-                <li><strong>Usage Statistics:</strong> Anonymous usage data including game selection, feature usage, 
-                    and session completion rates. This data is collected locally and used for app improvement.</li>
-                <li><strong>App Preferences:</strong> Your voice settings (language, volume, speed, source) are 
-                    stored locally on your device using iOS UserDefaults.</li>
-                <li><strong>No Personal Information:</strong> We do not collect, store, or transmit personal 
-                    identifiers such as names, email addresses, phone numbers, or device identifiers.</li>
-            </ul>
+    </header>
+
+    <main class="container">
+        <div class="policy-container">
+            <div class="policy-header">
+                <span class="section-tag">Legal & Compliance</span>
+                <h1 class="policy-title">Privacy Policy</h1>
+                <div class="policy-meta">Last Updated: September 2026 · Effective for Version 1.2.0+</div>
+            </div>
+
+            <div class="policy-section">
+                <h2>1. Introduction</h2>
+                <p>
+                    This Privacy Policy explains how <strong>Board Game Audio Assistant</strong> ("we", "our", or "the application") handles your information when using our iOS application. We believe in total transparency, minimal data retention, and player privacy.
+                </p>
+                <div class="policy-highlight-box">
+                    <strong>Summary:</strong> We do not require account registration, do not collect personal identities, and do not track private communications. Most preferences and recordings reside 100% locally on your iPhone or iPad.
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <h2>2. Information We Handle</h2>
+                <ul>
+                    <li>
+                        <strong>Local App Preferences:</strong> Your voice narration settings (preferred language, playback volume, speech rate, and selected TTS voice) are stored solely on your local device via Apple's standard <code>UserDefaults</code> system.
+                    </li>
+                    <li>
+                        <strong>Custom Narration & Microphone (Optional):</strong> If you use the voice studio feature to record custom host narration, the app requests microphone access. Recorded audio files remain strictly inside your device's sandboxed local storage. Audio recordings are never uploaded to any remote server.
+                    </li>
+                    <li>
+                        <strong>Anonymous Gameplay Metrics:</strong> The app records lightweight anonymous session metrics (such as rounds completed, favorite game selections, or crash occurrences) stored locally to streamline quick rematch workflows.
+                    </li>
+                    <li>
+                        <strong>No Sensitive Personal Data:</strong> We do not ask for or collect names, email addresses, contacts, exact GPS locations, or financial payment details.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2>3. Advertising & Analytics (Google AdMob)</h2>
+                <p>
+                    Board Game Audio Assistant is free to download and utilizes <strong>Google AdMob</strong> to serve advertisements.
+                </p>
+                <ul>
+                    <li>
+                        <strong>App Tracking Transparency (ATT):</strong> On iOS 14.5 and later, we ask for your explicit permission prior to utilizing advertising identifiers (IDFA) for personalized advertisements. If you choose "Ask App not to Track", AdMob delivers only contextual, non-personalized ads.
+                    </li>
+                    <li>
+                        <strong>Publisher Verification:</strong> Our developer domain hosts the verified <code>app-ads.txt</code> entry (Google AdMob Publisher ID: <code>pub-2034595640300550</code>) pursuant to IAB Tech Lab standards.
+                    </li>
+                    <li>
+                        For more details regarding how Google processes advertising data, please review Google's Privacy & Terms: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener" style="color: var(--accent-teal); text-decoration: underline;">Google Advertising Privacy</a>.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2>4. Speech Synthesis & Third-Party Services</h2>
+                <p>
+                    The app provides speech guidance via two mechanisms:
+                </p>
+                <ul>
+                    <li><strong>Pre-recorded Studio Audio:</strong> Bundled directly inside the iOS app bundle, playing offline without any network usage.</li>
+                    <li><strong>Neural Text-to-Speech (TTS):</strong> Utilizes Apple's on-device <code>AVSpeechSynthesizer</code> or Google Cloud TTS API for dynamic step variations. No personal user data is attached to speech requests.</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2>5. Children's Privacy</h2>
+                <p>
+                    Board Game Audio Assistant is designed for general audiences and families. We do not knowingly solicit or collect personal information from children under the age of 13.
+                </p>
+            </div>
+
+            <div class="policy-section">
+                <h2>6. Changes to This Policy</h2>
+                <p>
+                    We may update this Privacy Policy from time to time to reflect new game additions, regulatory obligations, or operating system upgrades. Any revisions will update the "Last Updated" date at the top of this page.
+                </p>
+            </div>
+
+            <div class="policy-section">
+                <h2>7. Contact & Support</h2>
+                <p>
+                    If you have questions, feedback, or concerns regarding this Privacy Policy or your data, please contact the developer directly:
+                </p>
+                <p>
+                    <strong>Email:</strong> <a href="mailto:fangdev1063@gmail.com" style="color: var(--accent-teal); font-weight: 700;">fangdev1063@gmail.com</a><br>
+                    <strong>App Store Page:</strong> <a href="https://apps.apple.com/app/id6755318411" target="_blank" rel="noopener" style="color: var(--accent-teal);">Board Game Audio Assistant on the App Store</a>
+                </p>
+            </div>
+
+            <a href="index.html" class="btn-back-home">← Return to Home</a>
         </div>
-        
-        <div class="section">
-            <h2>How We Use Information</h2>
-            <p>The limited data we collect is used solely for:</p>
-            <ul>
-                <li>Improving app functionality and user experience</li>
-                <li>Understanding feature usage patterns</li>
-                <li>Identifying and fixing bugs</li>
-                <li>No data is shared with third parties or used for advertising purposes</li>
-            </ul>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container" style="text-align: center;">
+            <p>&copy; 2026 Board Game Audio Assistant. All rights reserved.</p>
         </div>
-        
-        <div class="section">
-            <h2>Data Storage</h2>
-            <p>
-                All user preferences and settings are stored locally on your device. We do not maintain 
-                external servers or cloud storage for user data. All game content, audio files, and 
-                configuration data are bundled with the app and stored locally.
-            </p>
-        </div>
-        
-        <div class="section">
-            <h2>Third-Party Services</h2>
-            <p>
-                The app may use system-provided Text-to-Speech (TTS) services on your device. These services 
-                are provided by Apple and are subject to Apple's privacy policies. We do not transmit any 
-                text or audio data to external TTS services.
-            </p>
-        </div>
-        
-        <div class="section">
-            <h2>Children's Privacy</h2>
-            <p>
-                Our app is designed for general audiences. We do not knowingly collect information from 
-                children under 13. If you believe we have inadvertently collected such information, 
-                please contact us immediately.
-            </p>
-        </div>
-        
-        <div class="section">
-            <h2>Changes to This Policy</h2>
-            <p>
-                We may update this Privacy Policy from time to time. We will notify users of any material 
-                changes by updating the "Last Updated" date at the top of this page. Continued use of 
-                the app after changes constitutes acceptance of the updated policy.
-            </p>
-        </div>
-        
-        <div class="section">
-            <h2>Contact Us</h2>
-            <p>
-                If you have questions about this Privacy Policy or our data practices, please contact us 
-                through the app's feedback feature or via the App Store listing.
-            </p>
-        </div>
-        
-        <div class="footer">
-            <p>
-                <a href="index.html" class="link">Back to Home</a>
-            </p>
-            <p style="margin-top: 15px;">
-                &copy; 2025 Board Game Audio Assistant. All rights reserved.
-            </p>
-            <p style="margin-top: 10px; font-size: 0.85em;">
-                Board Game Audio Assistant is an unofficial educational tool. Game rules and voice content are provided 
-                for learning, research, and personal entertainment purposes only. Related board game copyrights 
-                belong to their respective owners. For copyright concerns, please contact us for resolution.
-            </p>
-        </div>
-    </div>
+    </footer>
+
 </body>
 </html>
-

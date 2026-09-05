@@ -3,165 +3,1069 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Board Game Audio Assistant - Developer</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            padding: 40px;
-        }
-        
-        h1 {
-            color: #667eea;
-            margin-bottom: 10px;
-            font-size: 2.5em;
-        }
-        
-        .subtitle {
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 1.1em;
-        }
-        
-        .section {
-            margin-bottom: 30px;
-        }
-        
-        .section h2 {
-            color: #764ba2;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-        }
-        
-        .section p {
-            margin-bottom: 15px;
-            color: #555;
-        }
-        
-        .section ul {
-            margin-left: 20px;
-            color: #555;
-        }
-        
-        .section li {
-            margin-bottom: 8px;
-        }
-        
-        .link {
-            color: #667eea;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .link:hover {
-            color: #764ba2;
-            text-decoration: underline;
-        }
-        
-        .footer {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            text-align: center;
-            color: #999;
-            font-size: 0.9em;
-        }
-        
-        .badge {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            margin-right: 10px;
-            margin-bottom: 10px;
-        }
-    </style>
+    <title>Board Game Audio Assistant — Voice Host & Judge for iOS</title>
+    <meta name="description" content="Board Game Audio Assistant is the ultimate tabletop voice companion for Avalon, One Night Ultimate Werewolf, Salem 1692, Cheese Thief, and Werewords. Enjoy studio voice narration, interactive judge mode, and built-in tabletop tools on iOS 17.">
+    <meta name="keywords" content="Board Game Audio Assistant, Avalon Voice, Werewolf Voice Host, Salem 1692, Tabletop Companion, iOS Board Game App, 桌游语音助手, 阿瓦隆语音">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Board Game Audio Assistant — Voice Host & Tabletop Companion">
+    <meta property="og:description" content="Studio voice guidance, interactive judge mode, and tabletop tools for Avalon, One Night Werewolf, Salem 1692, and more.">
+    <meta property="og:image" content="assets/hero.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Board Game Audio Assistant — Voice Host & Tabletop Companion">
+    <meta name="twitter:description" content="Studio voice guidance, interactive judge mode, and tabletop tools for Avalon, One Night Werewolf, Salem 1692, and more.">
+    <meta name="twitter:image" content="assets/hero.jpg">
+    
+    <link rel="icon" type="image/png" href="assets/app_icon.png">
+    <link rel="apple-touch-icon" href="assets/app_icon.png">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Board Game Audio Assistant</h1>
-        <p class="subtitle">iOS Voice Assistant for Board Games</p>
-        
-        <div class="section">
-            <h2>About</h2>
-            <p>
-                Board Game Audio Assistant is an iOS app designed to help players and hosts quickly get into board games 
-                like Avalon, One Night Ultimate Werewolf, and Werewolf. The app provides bilingual voice guidance, 
-                process management, and auxiliary tools to enhance your gaming experience.
-            </p>
-        </div>
-        
-        <div class="section">
-            <h2>Features</h2>
-            <ul>
-                <li>Bilingual voice guidance (Simplified Chinese / English)</li>
-                <li>Rule explanation mode for new players</li>
-                <li>Full process hosting with step-by-step voice instructions</li>
-                <li>Interactive judge mode for special scenarios</li>
-                <li>Built-in tools: random player selector, timer, dice roller, scoreboard</li>
-                <li>Customizable voice settings (volume, speed, source)</li>
+
+    <!-- ==============================================================================
+         HEADER & NAVIGATION
+         ============================================================================== -->
+    <header class="site-header">
+        <div class="container navbar">
+            <a href="index.html" class="brand" id="brand-link">
+                <div class="brand-icon">
+                    <img src="assets/app_icon.png" alt="Board Game Audio Assistant Icon" width="44" height="44">
+                </div>
+                <div class="brand-title">
+                    <span class="brand-name" data-i18n="brand_name">Board Game Audio</span>
+                    <span class="brand-version">v1.2.0 · iOS 17+</span>
+                </div>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#games" class="nav-link" data-i18n="nav_games">Supported Games</a></li>
+                <li><a href="#demo" class="nav-link" data-i18n="nav_demo">Audio Host Demo</a></li>
+                <li><a href="#toolbox" class="nav-link" data-i18n="nav_toolbox">Toolbox</a></li>
+                <li><a href="#features" class="nav-link" data-i18n="nav_features">Features</a></li>
+                <li><a href="privacy.html" class="nav-link" data-i18n="nav_privacy">Privacy</a></li>
             </ul>
+
+            <div class="nav-actions">
+                <!-- Language Toggle -->
+                <div class="lang-toggle" role="group" aria-label="Language Selector">
+                    <button class="lang-btn active" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+                    <button class="lang-btn" id="btn-lang-zh" onclick="setLanguage('zh')">中文</button>
+                </div>
+
+                <!-- Download CTA -->
+                <a href="https://apps.apple.com/app/id6755318411" target="_blank" rel="noopener" class="btn-nav-download" id="nav-download-btn">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.61-.75 1.04-1.8 1.01-2.87-.96.04-2.17.65-2.83 1.43-.58.67-1.09 1.74-1.05 2.78 1.07.09 2.26-.58 2.87-1.34z"/>
+                    </svg>
+                    <span data-i18n="nav_download">App Store</span>
+                </a>
+
+                <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Menu" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
-        
-        <div class="section">
-            <h2>Supported Games</h2>
-            <span class="badge">Avalon</span>
-            <span class="badge">One Night Ultimate Werewolf</span>
-            <span class="badge">Werewolf (Standard)</span>
+    </header>
+
+    <main>
+        <!-- ==============================================================================
+             HERO SECTION
+             ============================================================================== -->
+        <section class="hero-section">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="hero-eyebrow">
+                        <span>✦</span>
+                        <span data-i18n="hero_eyebrow">Official iOS Tabletop Voice Companion</span>
+                    </div>
+
+                    <h1 class="hero-title" data-i18n="hero_title">
+                        Next-Gen Voice Host for <em class="italic">Tabletop Nights</em>.
+                    </h1>
+
+                    <p class="hero-description" data-i18n="hero_desc">
+                        Say goodbye to awkward peeking, missed night steps, and chaotic rule disputes. Board Game Audio Assistant brings studio voice narration, interactive judge branching, and smart tabletop tools to your board game gatherings.
+                    </p>
+
+                    <div class="hero-cta-group">
+                        <a href="https://apps.apple.com/app/id6755318411" target="_blank" rel="noopener" class="btn-primary-store" id="hero-download-btn">
+                            <svg class="store-btn-icon" viewBox="0 0 24 24">
+                                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.61-.75 1.04-1.8 1.01-2.87-.96.04-2.17.65-2.83 1.43-.58.67-1.09 1.74-1.05 2.78 1.07.09 2.26-.58 2.87-1.34z"/>
+                            </svg>
+                            <div class="store-btn-text">
+                                <span class="store-btn-label" data-i18n="download_label">Download On The</span>
+                                <span class="store-btn-title">App Store</span>
+                            </div>
+                        </a>
+
+                        <a href="#games" class="btn-secondary" id="hero-explore-btn">
+                            <span data-i18n="btn_explore">Explore Games</span>
+                            <span aria-hidden="true">→</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-badges-row">
+                        <div class="hero-badge-pill">
+                            <span class="hero-badge-dot"></span>
+                            <span data-i18n="badge_games_count">6 Supported Games</span>
+                        </div>
+                        <div class="hero-badge-pill">
+                            <span class="hero-badge-dot" style="background: var(--accent-gold);"></span>
+                            <span data-i18n="badge_languages">English · 中文 · Español</span>
+                        </div>
+                        <div class="hero-badge-pill">
+                            <span class="hero-badge-dot" style="background: var(--accent-red);"></span>
+                            <span data-i18n="badge_offline">100% Offline Ready</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual-card">
+                    <div class="hero-poster-frame">
+                        <img src="assets/hero.jpg" alt="Tabletop Board Game Night Table Atmosphere" class="hero-poster-img" width="600" height="338">
+                        
+                        <!-- Floating Interactive Audio Preview Pill -->
+                        <div class="floating-audio-card" id="floating-audio-widget">
+                            <div class="audio-preview-meta">
+                                <button class="audio-play-indicator" id="hero-play-toggle" onclick="toggleDemoAudio()" aria-label="Toggle demo play">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" id="hero-play-icon">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </button>
+                                <div class="audio-text-col">
+                                    <div class="audio-step-title" data-i18n="hero_audio_step">Step 03 · Night Phase</div>
+                                    <div class="audio-step-text" id="hero-step-text" data-i18n="hero_audio_quote">"Merlin, open your eyes to see evil..."</div>
+                                </div>
+                            </div>
+                            <div class="sound-waves" aria-hidden="true">
+                                <span class="sound-bar"></span>
+                                <span class="sound-bar"></span>
+                                <span class="sound-bar"></span>
+                                <span class="sound-bar"></span>
+                                <span class="sound-bar"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================================================
+             SUPPORTED GAMES SHOWCASE
+             ============================================================================== -->
+        <section id="games" class="section section-alt">
+            <div class="container">
+                <div class="section-header-center">
+                    <span class="section-tag" data-i18n="tag_games_library">Curated Game Library</span>
+                    <h2 class="section-title" data-i18n="title_games_library">Popular Social Deduction & Strategy Games</h2>
+                    <p class="section-subtitle" data-i18n="subtitle_games_library">
+                        Every game features meticulously timed night scripts, role avatar previews, and zero-spoiler voice coordination.
+                    </p>
+                </div>
+
+                <div class="filter-tabs">
+                    <button class="tab-btn active" onclick="filterGames('all')" id="tab-filter-all" data-i18n="filter_all">All Games (6)</button>
+                    <button class="tab-btn" onclick="filterGames('host')" id="tab-filter-host" data-i18n="filter_host">Voice Host Mode</button>
+                    <button class="tab-btn" onclick="filterGames('interactive')" id="tab-filter-interactive" data-i18n="filter_interactive">Interactive Judge Mode</button>
+                </div>
+
+                <div class="games-grid" id="games-container">
+
+                    <!-- Game 1: Avalon -->
+                    <div class="game-card" data-category="host">
+                        <div class="game-card-top">
+                            <img src="assets/games/avalon.png" alt="Avalon" class="game-card-art">
+                            <span class="game-mode-badge badge-host" data-i18n="badge_host">Host Mode</span>
+                        </div>
+                        <div class="game-card-body">
+                            <div class="game-title-row">
+                                <h3 class="game-name" data-i18n="game_avalon_name">Avalon</h3>
+                                <span class="info-pill">30 min</span>
+                            </div>
+                            <div class="game-pills-row">
+                                <span class="info-pill" data-i18n="game_avalon_players">5–10 Players</span>
+                                <span class="info-pill" data-i18n="game_avalon_theme">Arthurian Legend</span>
+                            </div>
+                            <p class="game-desc" data-i18n="game_avalon_desc">
+                                Complete night phase voice moderation with Merlin, Assassin, Morgana, Percival, Mordred, Oberon, and Lady of the Lake options.
+                            </p>
+                            <div class="character-strip">
+                                <span class="strip-label" data-i18n="label_roles">Key Roles</span>
+                                <div class="strip-avatars">
+                                    <img src="assets/games/avalon_merlin.png" alt="Merlin" class="strip-avatar" title="Merlin">
+                                    <img src="assets/games/avalon_assassin.png" alt="Assassin" class="strip-avatar" title="Assassin">
+                                    <img src="assets/games/avalon_morgana.png" alt="Morgana" class="strip-avatar" title="Morgana">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Game 2: One Night Ultimate Werewolf -->
+                    <div class="game-card" data-category="host">
+                        <div class="game-card-top">
+                            <img src="assets/games/one_night_werewolf.png" alt="One Night Ultimate Werewolf" class="game-card-art">
+                            <span class="game-mode-badge badge-host" data-i18n="badge_host">Host Mode</span>
+                        </div>
+                        <div class="game-card-body">
+                            <div class="game-title-row">
+                                <h3 class="game-name" data-i18n="game_onuw_name">One Night Werewolf</h3>
+                                <span class="info-pill">10 min</span>
+                            </div>
+                            <div class="game-pills-row">
+                                <span class="info-pill" data-i18n="game_onuw_players">3–10 Players</span>
+                                <span class="info-pill" data-i18n="game_onuw_theme">Fast Mystery</span>
+                            </div>
+                            <p class="game-desc" data-i18n="game_onuw_desc">
+                                Seamless 10-minute rounds supporting Seer, Robber, Troublemaker, Insomniac, Doppelgänger, Tanner, Drunk, and Minion roles.
+                            </p>
+                            <div class="character-strip">
+                                <span class="strip-label" data-i18n="label_roles">Key Roles</span>
+                                <div class="strip-avatars">
+                                    <img src="assets/games/one_night_werewolf_seer.png" alt="Seer" class="strip-avatar" title="Seer">
+                                    <img src="assets/games/one_night_werewolf_troublemaker.png" alt="Troublemaker" class="strip-avatar" title="Troublemaker">
+                                    <img src="assets/games/one_night_werewolf_werewolf.png" alt="Werewolf" class="strip-avatar" title="Werewolf">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Game 3: Salem 1692 -->
+                    <div class="game-card" data-category="host">
+                        <div class="game-card-top">
+                            <img src="assets/games/salem_1692_dawn.png" alt="Salem 1692" class="game-card-art">
+                            <span class="game-mode-badge badge-host" data-i18n="badge_host">Dawn & Night</span>
+                        </div>
+                        <div class="game-card-body">
+                            <div class="game-title-row">
+                                <h3 class="game-name" data-i18n="game_salem_name">Salem 1692</h3>
+                                <span class="info-pill">25 min</span>
+                            </div>
+                            <div class="game-pills-row">
+                                <span class="info-pill" data-i18n="game_salem_players">4–12 Players</span>
+                                <span class="info-pill" data-i18n="game_salem_theme">Witch Trial</span>
+                            </div>
+                            <p class="game-desc" data-i18n="game_salem_desc">
+                                Dual-mode support for Dawn (Black Cat initiation) and Night (Witch kills, Sheriff saves) with town paranoia atmosphere.
+                            </p>
+                            <div class="character-strip">
+                                <span class="strip-label" data-i18n="label_roles">Phases</span>
+                                <div class="strip-avatars">
+                                    <img src="assets/games/salem_1692_dawn.png" alt="Dawn" class="strip-avatar" title="Dawn Mode">
+                                    <img src="assets/games/salem_1692_night.png" alt="Night" class="strip-avatar" title="Night Mode">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Game 4: Cheese Thief -->
+                    <div class="game-card" data-category="host">
+                        <div class="game-card-top">
+                            <img src="assets/games/cheese_thief.png" alt="Cheese Thief" class="game-card-art">
+                            <span class="game-mode-badge badge-host" data-i18n="badge_host">Host Mode</span>
+                        </div>
+                        <div class="game-card-body">
+                            <div class="game-title-row">
+                                <h3 class="game-name" data-i18n="game_cheese_name">Cheese Thief</h3>
+                                <span class="info-pill">15 min</span>
+                            </div>
+                            <div class="game-pills-row">
+                                <span class="info-pill" data-i18n="game_cheese_players">4–8 Players</span>
+                                <span class="info-pill" data-i18n="game_cheese_theme">Bluffing & Dice</span>
+                            </div>
+                            <p class="game-desc" data-i18n="game_cheese_desc">
+                                Precision hourly sleep/wake cycles from 1 to 6 o'clock. The app guides the cheese snatcher and sleepy accomplices effortlessly.
+                            </p>
+                            <div class="character-strip">
+                                <span class="strip-label" data-i18n="label_mechanic">Mechanic</span>
+                                <div class="strip-avatars">
+                                    <span class="info-pill" style="font-size: 0.7rem;">Dice Roll + Secret Wake</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Game 5: Blood and Blade -->
+                    <div class="game-card" data-category="host">
+                        <div class="game-card-top">
+                            <img src="assets/games/blood_and_blade.png" alt="Blood and Blade" class="game-card-art">
+                            <span class="game-mode-badge badge-host" data-i18n="badge_host">Host Mode</span>
+                        </div>
+                        <div class="game-card-body">
+                            <div class="game-title-row">
+                                <h3 class="game-name" data-i18n="game_blade_name">Blood & Blade</h3>
+                                <span class="info-pill">35 min</span>
+                            </div>
+                            <div class="game-pills-row">
+                                <span class="info-pill" data-i18n="game_blade_players">5–10 Players</span>
+                                <span class="info-pill" data-i18n="game_blade_theme">Factions & Combat</span>
+                            </div>
+                            <p class="game-desc" data-i18n="game_blade_desc">
+                                White Rose faction deception and combat round progression. Seamless voice cues for bishops, believers, and dark blades.
+                            </p>
+                            <div class="character-strip">
+                                <span class="strip-label" data-i18n="label_roles">Key Roles</span>
+                                <div class="strip-avatars">
+                                    <img src="assets/games/blood_and_blade_white_rose.png" alt="White Rose" class="strip-avatar" title="White Rose">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Game 6: Werewords -->
+                    <div class="game-card" data-category="interactive">
+                        <div class="game-card-top">
+                            <img src="assets/games/werewords.png" alt="Werewords" class="game-card-art">
+                            <span class="game-mode-badge badge-interactive" data-i18n="badge_interactive">Interactive Judge</span>
+                        </div>
+                        <div class="game-card-body">
+                            <div class="game-title-row">
+                                <h3 class="game-name" data-i18n="game_werewords_name">Werewords</h3>
+                                <span class="info-pill">15 min</span>
+                            </div>
+                            <div class="game-pills-row">
+                                <span class="info-pill" data-i18n="game_werewords_players">4–10 Players</span>
+                                <span class="info-pill" data-i18n="game_werewords_theme">Word Guessing</span>
+                            </div>
+                            <p class="game-desc" data-i18n="game_werewords_desc">
+                                Features Interactive Judge Mode: Mayor secret magic word picker, 4-minute guess countdown, Yes/No token counter, and Seer/Werewolf endgame reveal.
+                            </p>
+                            <div class="character-strip">
+                                <span class="strip-label" data-i18n="label_roles">Key Roles</span>
+                                <div class="strip-avatars">
+                                    <img src="assets/games/werewords_mayor.png" alt="Mayor" class="strip-avatar" title="Mayor">
+                                    <img src="assets/games/werewords_werewolf.png" alt="Werewolf" class="strip-avatar" title="Werewolf">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================================================
+             INTERACTIVE AUDIO HOST & TIMELINE DEMO
+             ============================================================================== -->
+        <section id="demo" class="section">
+            <div class="container">
+                <div class="demo-stage">
+                    <div class="timeline-console">
+                        <div class="timeline-steps" id="demo-steps-list">
+                            <div class="timeline-step-item active" id="step-0">
+                                <div class="step-marker">1</div>
+                                <div class="step-content">
+                                    <div class="step-tag" data-i18n="step_1_tag">Phase: Night Fall</div>
+                                    <div class="step-instruction" data-i18n="step_1_text">"Night falls, everyone close your eyes and put your fist on the table."</div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-step-item" id="step-1">
+                                <div class="step-marker">2</div>
+                                <div class="step-content">
+                                    <div class="step-tag" data-i18n="step_2_tag">Phase: Minions of Mordred</div>
+                                    <div class="step-instruction" data-i18n="step_2_text">"Minions of Mordred, not including Oberon, open your eyes and look around."</div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-step-item" id="step-2">
+                                <div class="step-marker">3</div>
+                                <div class="step-content">
+                                    <div class="step-tag" data-i18n="step_3_tag">Phase: Merlin Awakes</div>
+                                    <div class="step-instruction" data-i18n="step_3_text">"Evil players, extend your thumbs so Merlin knows you. Merlin, open your eyes."</div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-step-item" id="step-3">
+                                <div class="step-marker">4</div>
+                                <div class="step-content">
+                                    <div class="step-tag" data-i18n="step_4_tag">Phase: Percival Sight</div>
+                                    <div class="step-instruction" data-i18n="step_4_text">"Merlin and Morgana, extend your thumbs. Percival, open your eyes to see them."</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="console-controls">
+                            <button class="ctrl-btn" onclick="prevDemoStep()" id="btn-prev-step" data-i18n="btn_prev_step">◀ Prev</button>
+                            <button class="ctrl-btn play-btn" onclick="togglePlaySimulation()" id="btn-play-sim" data-i18n="btn_play_step">▶ Play Step</button>
+                            <button class="ctrl-btn" onclick="nextDemoStep()" id="btn-next-step" data-i18n="btn_next_step">Next ▶</button>
+                            <button class="ctrl-btn" onclick="resetDemoStep()" id="btn-reset-step" data-i18n="btn_restart">↺ Reset</button>
+                        </div>
+                    </div>
+
+                    <div class="demo-text-col">
+                        <span class="section-tag" data-i18n="tag_live_engine">Dynamic Voice Engine</span>
+                        <h3 data-i18n="title_live_engine">Zero Confusion. Absolute Flow.</h3>
+                        <p data-i18n="desc_live_engine">
+                            The vertical timeline keeps everyone focused. Current spoken lines are magnified and auto-scrolled in sync with studio audio. If the door rings or a player asks a question, pause or rewind with a single tap.
+                        </p>
+
+                        <ul class="feature-bullets">
+                            <li class="bullet-item">
+                                <div class="bullet-icon">✓</div>
+                                <div>
+                                    <strong data-i18n="bullet_1_title">Dual-Source Audio:</strong>
+                                    <p data-i18n="bullet_1_desc">Pristine human voice recordings with automatic fallback to high-quality neural speech synthesizers.</p>
+                                </div>
+                            </li>
+                            <li class="bullet-item">
+                                <div class="bullet-icon">✓</div>
+                                <div>
+                                    <strong data-i18n="bullet_2_title">Screen Keep-Awake:</strong>
+                                    <p data-i18n="bullet_2_desc">Prevents iOS from sleeping mid-turn, so the host can glance at the timer and status anytime.</p>
+                                </div>
+                            </li>
+                            <li class="bullet-item">
+                                <div class="bullet-icon">✓</div>
+                                <div>
+                                    <strong data-i18n="bullet_3_title">Tactile Haptics:</strong>
+                                    <p data-i18n="bullet_3_desc">Discreet sensory vibration alerts notify the host when night steps begin or timers expire.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================================================
+             TABLETOP TOOLBOX SUITE
+             ============================================================================== -->
+        <section id="toolbox" class="section section-alt">
+            <div class="container">
+                <div class="section-header-center">
+                    <span class="section-tag" data-i18n="tag_toolbox">All-in-One Utility</span>
+                    <h2 class="section-title" data-i18n="title_toolbox">The Tabletop Toolbox Suite</h2>
+                    <p class="section-subtitle" data-i18n="subtitle_toolbox">
+                        Integrated utilities for any board game night. Accessible as independent popup sheets right from the navigation bar.
+                    </p>
+                </div>
+
+                <div class="toolbox-grid">
+
+                    <!-- Tool 1: 3D Polyhedral Dice Roller -->
+                    <div class="tool-card">
+                        <div class="tool-icon-box">🎲</div>
+                        <h3 class="tool-title" data-i18n="tool_dice_title">Polyhedral Dice</h3>
+                        <p class="tool-desc" data-i18n="tool_dice_desc">
+                            Roll 1 to 4 dice simultaneously with support for D6, D8, D10, D12, or custom sides. Lock dice and re-roll.
+                        </p>
+                        <div class="tool-widget-box">
+                            <div class="dice-result" id="interactive-dice-val">⚅ 6</div>
+                            <button class="tool-action-btn" onclick="rollInteractiveDice()" id="btn-roll-dice" data-i18n="btn_roll_dice">Roll D6</button>
+                        </div>
+                    </div>
+
+                    <!-- Tool 2: Precision Game Timer -->
+                    <div class="tool-card">
+                        <div class="tool-icon-box">⏱️</div>
+                        <h3 class="tool-title" data-i18n="tool_timer_title">Turn Timer</h3>
+                        <p class="tool-desc" data-i18n="tool_timer_desc">
+                            Quick 30s / 60s / 90s presets or custom durations from 1s to 30min. Gentle audio chimes and haptic triggers.
+                        </p>
+                        <div class="tool-widget-box">
+                            <div class="dice-result" id="interactive-timer-val" style="color: var(--accent-teal);">00:45</div>
+                            <button class="tool-action-btn" onclick="toggleInteractiveTimer()" id="btn-timer-toggle" data-i18n="btn_timer_toggle">Start Countdown</button>
+                        </div>
+                    </div>
+
+                    <!-- Tool 3: Random Player Selector -->
+                    <div class="tool-card">
+                        <div class="tool-icon-box">🎯</div>
+                        <h3 class="tool-title" data-i18n="tool_picker_title">Fair Player Picker</h3>
+                        <p class="tool-desc" data-i18n="tool_picker_desc">
+                            Fair starting player selection. Includes draw history and auto-exclusion of previously selected players.
+                        </p>
+                        <div class="tool-widget-box">
+                            <div class="dice-result" id="interactive-picker-val" style="color: var(--accent-purple);">Player #3</div>
+                            <button class="tool-action-btn" onclick="pickRandomPlayer()" id="btn-picker-toggle" data-i18n="btn_picker_toggle">Pick Next Player</button>
+                        </div>
+                    </div>
+
+                    <!-- Tool 4: Scoreboard Counter -->
+                    <div class="tool-card">
+                        <div class="tool-icon-box">📊</div>
+                        <h3 class="tool-title" data-i18n="tool_score_title">Live Scoreboard</h3>
+                        <p class="tool-desc" data-i18n="tool_score_desc">
+                            Player nicknames, rapid increment/decrement (-99 to 999), instant zero reset, and auto-sorting by highest score.
+                        </p>
+                        <div class="tool-widget-box">
+                            <div class="dice-result" id="interactive-score-val" style="color: var(--accent-gold);">Pts: 12</div>
+                            <button class="tool-action-btn" onclick="addScoreInteractive()" id="btn-score-add" data-i18n="btn_score_add">+2 Points</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================================================
+             CORE FEATURES GRID (v1.2.0 HIGHLIGHTS)
+             ============================================================================== -->
+        <section id="features" class="section">
+            <div class="container">
+                <div class="section-header-center">
+                    <span class="section-tag" data-i18n="tag_features">v1.2.0 Architecture</span>
+                    <h2 class="section-title" data-i18n="title_features">Built by Tabletop Players, for Players</h2>
+                    <p class="section-subtitle" data-i18n="subtitle_features">
+                        Designed from the ground up for seamless offline game nights with friends, family, and board game club hosts.
+                    </p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-box">
+                        <div class="feature-icon-wrapper box-teal">🎙️</div>
+                        <h3 class="feature-title" data-i18n="feat_1_title">Dual Audio Engine</h3>
+                        <p class="feature-description" data-i18n="feat_1_desc">
+                            High-fidelity studio recorded voice clips with automatic fallback to Apple Neural TTS & Google Cloud TTS when offline or custom rules are chosen.
+                        </p>
+                    </div>
+
+                    <div class="feature-box">
+                        <div class="feature-icon-wrapper box-gold">⚖️</div>
+                        <h3 class="feature-title" data-i18n="feat_2_title">Interactive Judge Mode</h3>
+                        <p class="feature-description" data-i18n="feat_2_desc">
+                            Branching logic handles complicated scenarios like Werewords token tallies, Salem dawn accusations, and night elimination checks without manual notes.
+                        </p>
+                    </div>
+
+                    <div class="feature-box">
+                        <div class="feature-icon-wrapper box-red">⚡</div>
+                        <h3 class="feature-title" data-i18n="feat_3_title">Presets & Quick Rematch</h3>
+                        <p class="feature-description" data-i18n="feat_3_desc">
+                            Save your regular game night roster configs into favorite presets. Hit 'Quick Rematch' after a game ends to jump right into round two in 1 tap.
+                        </p>
+                    </div>
+
+                    <div class="feature-box">
+                        <div class="feature-icon-wrapper box-purple">🎵</div>
+                        <h3 class="feature-title" data-i18n="feat_4_title">Tavern Ambiance Music</h3>
+                        <p class="feature-description" data-i18n="feat_4_desc">
+                            One-tap quick launcher for Apple Music, Spotify, and YouTube Music. Mix atmospheric tavern medieval background music alongside the voice narrator.
+                        </p>
+                    </div>
+
+                    <div class="feature-box">
+                        <div class="feature-icon-wrapper box-teal">📱</div>
+                        <h3 class="feature-title" data-i18n="feat_5_title">iOS 17 Sensory Experience</h3>
+                        <p class="feature-description" data-i18n="feat_5_desc">
+                            Built natively in SwiftUI with iOS 17 sensory feedback. Keep-awake screen control prevents dark lockouts during long discussion phases.
+                        </p>
+                    </div>
+
+                    <div class="feature-box">
+                        <div class="feature-icon-wrapper box-gold">🌐</div>
+                        <h3 class="feature-title" data-i18n="feat_6_title">Trilingual Localization</h3>
+                        <p class="feature-description" data-i18n="feat_6_desc">
+                            Full voice and interface localization in English, Simplified Chinese (简体中文), and Spanish (Español) for international tabletop groups.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================================================
+             DOWNLOAD / CTA BANNER
+             ============================================================================== -->
+        <section id="download" class="section">
+            <div class="container">
+                <div class="cta-banner">
+                    <span class="cta-tag" data-i18n="cta_tag">Ready for Your Next Game Night?</span>
+                    <h2 class="cta-title" data-i18n="cta_title">Elevate your board game gatherings <em>tonight</em>.</h2>
+                    <p class="cta-subtitle" data-i18n="cta_desc">
+                        Download Board Game Audio Assistant free on the App Store. Setup a 7-player Avalon or One Night Werewolf game in under 30 seconds.
+                    </p>
+
+                    <div class="cta-buttons-row">
+                        <a href="https://apps.apple.com/app/id6755318411" target="_blank" rel="noopener" class="btn-cta-white" id="cta-store-btn">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.61-.75 1.04-1.8 1.01-2.87-.96.04-2.17.65-2.83 1.43-.58.67-1.09 1.74-1.05 2.78 1.07.09 2.26-.58 2.87-1.34z"/>
+                            </svg>
+                            <span data-i18n="cta_store_btn">Download on App Store</span>
+                        </a>
+
+                        <a href="mailto:fangdev1063@gmail.com" class="btn-cta-outline" id="cta-feedback-btn">
+                            <span data-i18n="cta_feedback">Contact Developer</span>
+                        </a>
+                    </div>
+
+                    <p class="cta-requirement-note" data-i18n="cta_note">
+                        Requires iOS 17.0 or later · Compatible with iPhone and iPad
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==============================================================================
+         FOOTER
+         ============================================================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand-col">
+                    <div class="footer-brand-title" data-i18n="brand_name">Board Game Audio Assistant</div>
+                    <p class="footer-brand-desc" data-i18n="footer_desc">
+                        An unofficial tabletop companion app providing voice guidance, flow management, and smart judge utilities for social deduction board games.
+                    </p>
+                </div>
+
+                <div class="footer-links-col">
+                    <div class="footer-nav-group">
+                        <span class="footer-heading" data-i18n="footer_games">Games</span>
+                        <a href="#games" class="footer-link">Avalon</a>
+                        <a href="#games" class="footer-link">One Night Werewolf</a>
+                        <a href="#games" class="footer-link">Salem 1692</a>
+                        <a href="#games" class="footer-link">Werewords</a>
+                    </div>
+
+                    <div class="footer-nav-group">
+                        <span class="footer-heading" data-i18n="footer_resources">Resources</span>
+                        <a href="#toolbox" class="footer-link" data-i18n="nav_toolbox">Toolbox</a>
+                        <a href="privacy.html" class="footer-link" data-i18n="nav_privacy">Privacy Policy</a>
+                        <a href="terms.html" class="footer-link" data-i18n="nav_terms">Terms of Use</a>
+                        <a href="mailto:fangdev1063@gmail.com" class="footer-link" data-i18n="nav_support">Support Email</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-legal-notice">
+                <p data-i18n="legal_disclaimer">
+                    <strong>Disclaimer:</strong> Board Game Audio Assistant is an unofficial educational and entertainment utility. Game rules, roles, and voice narratives are provided solely for player convenience and learning purposes. All copyrights, trademarks, and intellectual property rights relating to the respective board games (such as Avalon, One Night Ultimate Werewolf, Salem 1692, Cheese Thief, Blood and Blade, and Werewords) belong strictly to their original authors and publishers.
+                </p>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Board Game Audio Assistant. All rights reserved.</p>
+                <p data-i18n="footer_version_tag">iOS Release v1.2.0 (Build 12) · Designed with Retro Aesthetics</p>
+            </div>
         </div>
-        
-        <div class="section">
-            <h2>Platform</h2>
-            <p>
-                <strong>iOS</strong> - Requires iOS 16.0 or later<br>
-                Available on iPhone and iPad
-            </p>
-        </div>
-        
-        <div class="section">
-            <h2>Contact</h2>
-            <p>
-                For inquiries, feedback, or support, please contact us through the app's feedback feature 
-                or reach out via the App Store listing.
-            </p>
-        </div>
-        
-        <div class="footer">
-            <p>
-                <a href="privacy.html" class="link">Privacy Policy</a>
-            </p>
-            <p style="margin-top: 15px;">
-                &copy; 2025 Board Game Audio Assistant. All rights reserved.
-            </p>
-            <p style="margin-top: 10px; font-size: 0.85em;">
-                Board Game Audio Assistant is an unofficial educational tool. Game rules and voice content are provided 
-                for learning, research, and personal entertainment purposes only. Related board game copyrights 
-                belong to their respective owners. For copyright concerns, please contact us for resolution.
-            </p>
-        </div>
-    </div>
+    </footer>
+
+    <!-- ==============================================================================
+         INTERACTIVE SCRIPTS & LOCALIZATION
+         ============================================================================== -->
+    <script>
+        // Internationalization Dictionaries
+        const i18n = {
+            en: {
+                brand_name: "Board Game Audio",
+                nav_games: "Supported Games",
+                nav_demo: "Audio Host Demo",
+                nav_toolbox: "Toolbox",
+                nav_features: "Features",
+                nav_privacy: "Privacy",
+                nav_terms: "Terms of Use",
+                nav_support: "Support Email",
+                nav_download: "App Store",
+                hero_eyebrow: "Official iOS Tabletop Voice Companion",
+                hero_title: "Next-Gen Voice Host for <em class=\"italic\">Tabletop Nights</em>.",
+                hero_desc: "Say goodbye to awkward peeking, missed night steps, and chaotic rule disputes. Board Game Audio Assistant brings studio voice narration, interactive judge branching, and smart tabletop tools to your board game gatherings.",
+                download_label: "Download On The",
+                btn_explore: "Explore Games",
+                badge_games_count: "6 Supported Games",
+                badge_languages: "English · 中文 · Español",
+                badge_offline: "100% Offline Ready",
+                hero_audio_step: "Step 03 · Night Phase",
+                hero_audio_quote: "\"Merlin, open your eyes to see evil...\"",
+                tag_games_library: "Curated Game Library",
+                title_games_library: "Popular Social Deduction & Strategy Games",
+                subtitle_games_library: "Every game features meticulously timed night scripts, role avatar previews, and zero-spoiler voice coordination.",
+                filter_all: "All Games (6)",
+                filter_host: "Voice Host Mode",
+                filter_interactive: "Interactive Judge Mode",
+                badge_host: "Host Mode",
+                badge_interactive: "Interactive Judge",
+                game_avalon_name: "Avalon",
+                game_avalon_players: "5–10 Players",
+                game_avalon_theme: "Arthurian Legend",
+                game_avalon_desc: "Complete night phase voice moderation with Merlin, Assassin, Morgana, Percival, Mordred, Oberon, and Lady of the Lake options.",
+                game_onuw_name: "One Night Werewolf",
+                game_onuw_players: "3–10 Players",
+                game_onuw_theme: "Fast Mystery",
+                game_onuw_desc: "Seamless 10-minute rounds supporting Seer, Robber, Troublemaker, Insomniac, Doppelgänger, Tanner, Drunk, and Minion roles.",
+                game_salem_name: "Salem 1692",
+                game_salem_players: "4–12 Players",
+                game_salem_theme: "Witch Trial",
+                game_salem_desc: "Dual-mode support for Dawn (Black Cat initiation) and Night (Witch kills, Sheriff saves) with town paranoia atmosphere.",
+                game_cheese_name: "Cheese Thief",
+                game_cheese_players: "4–8 Players",
+                game_cheese_theme: "Bluffing & Dice",
+                game_cheese_desc: "Precision hourly sleep/wake cycles from 1 to 6 o'clock. The app guides the cheese snatcher and sleepy accomplices effortlessly.",
+                game_blade_name: "Blood & Blade",
+                game_blade_players: "5–10 Players",
+                game_blade_theme: "Factions & Combat",
+                game_blade_desc: "White Rose faction deception and combat round progression. Seamless voice cues for bishops, believers, and dark blades.",
+                game_werewords_name: "Werewords",
+                game_werewords_players: "4–10 Players",
+                game_werewords_theme: "Word Guessing",
+                game_werewords_desc: "Features Interactive Judge Mode: Mayor secret magic word picker, 4-minute guess countdown, Yes/No token counter, and Seer/Werewolf endgame reveal.",
+                label_roles: "Key Roles",
+                label_mechanic: "Mechanic",
+                step_1_tag: "Phase: Night Fall",
+                step_1_text: "\"Night falls, everyone close your eyes and put your fist on the table.\"",
+                step_2_tag: "Phase: Minions of Mordred",
+                step_2_text: "\"Minions of Mordred, not including Oberon, open your eyes and look around.\"",
+                step_3_tag: "Phase: Merlin Awakes",
+                step_3_text: "\"Evil players, extend your thumbs so Merlin knows you. Merlin, open your eyes.\"",
+                step_4_tag: "Phase: Percival Sight",
+                step_4_text: "\"Merlin and Morgana, extend your thumbs. Percival, open your eyes to see them.\"",
+                btn_prev_step: "◀ Prev",
+                btn_play_step: "▶ Play Step",
+                btn_next_step: "Next ▶",
+                btn_restart: "↺ Reset",
+                tag_live_engine: "Dynamic Voice Engine",
+                title_live_engine: "Zero Confusion. Absolute Flow.",
+                desc_live_engine: "The vertical timeline keeps everyone focused. Current spoken lines are magnified and auto-scrolled in sync with studio audio. If the door rings or a player asks a question, pause or rewind with a single tap.",
+                bullet_1_title: "Dual-Source Audio:",
+                bullet_1_desc: "Pristine human voice recordings with automatic fallback to high-quality neural speech synthesizers.",
+                bullet_2_title: "Screen Keep-Awake:",
+                bullet_2_desc: "Prevents iOS from sleeping mid-turn, so the host can glance at the timer and status anytime.",
+                bullet_3_title: "Tactile Haptics:",
+                bullet_3_desc: "Discreet sensory vibration alerts notify the host when night steps begin or timers expire.",
+                tag_toolbox: "All-in-One Utility",
+                title_toolbox: "The Tabletop Toolbox Suite",
+                subtitle_toolbox: "Integrated utilities for any board game night. Accessible as independent popup sheets right from the navigation bar.",
+                tool_dice_title: "Polyhedral Dice",
+                tool_dice_desc: "Roll 1 to 4 dice simultaneously with support for D6, D8, D10, D12, or custom sides. Lock dice and re-roll.",
+                btn_roll_dice: "Roll D6",
+                tool_timer_title: "Turn Timer",
+                tool_timer_desc: "Quick 30s / 60s / 90s presets or custom durations from 1s to 30min. Gentle audio chimes and haptic triggers.",
+                btn_timer_toggle: "Start Countdown",
+                tool_picker_title: "Fair Player Picker",
+                tool_picker_desc: "Fair starting player selection. Includes draw history and auto-exclusion of previously selected players.",
+                btn_picker_toggle: "Pick Next Player",
+                tool_score_title: "Live Scoreboard",
+                tool_score_desc: "Player nicknames, rapid increment/decrement (-99 to 999), instant zero reset, and auto-sorting by highest score.",
+                btn_score_add: "+2 Points",
+                tag_features: "v1.2.0 Architecture",
+                title_features: "Built by Tabletop Players, for Players",
+                subtitle_features: "Designed from the ground up for seamless offline game nights with friends, family, and board game club hosts.",
+                feat_1_title: "Dual Audio Engine",
+                feat_1_desc: "High-fidelity studio recorded voice clips with automatic fallback to Apple Neural TTS & Google Cloud TTS when offline or custom rules are chosen.",
+                feat_2_title: "Interactive Judge Mode",
+                feat_2_desc: "Branching logic handles complicated scenarios like Werewords token tallies, Salem dawn accusations, and night elimination checks without manual notes.",
+                feat_3_title: "Presets & Quick Rematch",
+                feat_3_desc: "Save your regular game night roster configs into favorite presets. Hit 'Quick Rematch' after a game ends to jump right into round two in 1 tap.",
+                feat_4_title: "Tavern Ambiance Music",
+                feat_4_desc: "One-tap quick launcher for Apple Music, Spotify, and YouTube Music. Mix atmospheric tavern medieval background music alongside the voice narrator.",
+                feat_5_title: "iOS 17 Sensory Experience",
+                feat_5_desc: "Built natively in SwiftUI with iOS 17 sensory feedback. Keep-awake screen control prevents dark lockouts during long discussion phases.",
+                feat_6_title: "Trilingual Localization",
+                feat_6_desc: "Full voice and interface localization in English, Simplified Chinese (简体中文), and Spanish (Español) for international tabletop groups.",
+                cta_tag: "Ready for Your Next Game Night?",
+                cta_title: "Elevate your board game gatherings <em class=\"italic\">tonight</em>.",
+                cta_desc: "Download Board Game Audio Assistant free on the App Store. Setup a 7-player Avalon or One Night Werewolf game in under 30 seconds.",
+                cta_store_btn: "Download on App Store",
+                cta_feedback: "Contact Developer",
+                cta_note: "Requires iOS 17.0 or later · Compatible with iPhone and iPad",
+                footer_desc: "An unofficial tabletop companion app providing voice guidance, flow management, and smart judge utilities for social deduction board games.",
+                footer_games: "Games",
+                footer_resources: "Resources",
+                legal_disclaimer: "<strong>Disclaimer:</strong> Board Game Audio Assistant is an unofficial educational and entertainment utility. Game rules, roles, and voice narratives are provided solely for player convenience and learning purposes. All copyrights, trademarks, and intellectual property rights relating to the respective board games (such as Avalon, One Night Ultimate Werewolf, Salem 1692, Cheese Thief, Blood and Blade, and Werewords) belong strictly to their original authors and publishers.",
+                footer_version_tag: "iOS Release v1.2.0 (Build 12) · Designed with Retro Aesthetics"
+            },
+            zh: {
+                brand_name: "桌游语音助手",
+                nav_games: "支持游戏",
+                nav_demo: "主持演播",
+                nav_toolbox: "聚会工具箱",
+                nav_features: "核心亮点",
+                nav_privacy: "隐私政策",
+                nav_terms: "服务条款",
+                nav_support: "技术支持邮箱",
+                nav_download: "App Store 下载",
+                hero_eyebrow: "官方 iOS 桌游语音主持伙伴",
+                hero_title: "为你的桌游夜注入 <em class=\"italic\">沉浸式全流程主持</em>。",
+                hero_desc: "彻底告别眯眼偷看、遗漏夜间口令与费心核算规则的尴尬局面。桌游语音助手将录音棚专业级播报、互动分支法官与便携实用工具箱融为一体，让每一次朋友聚会都能瞬间进入游戏巅峰状态。",
+                download_label: "立即下载自",
+                btn_explore: "浏览支持桌游",
+                badge_games_count: "已适配 6 款热门桌游",
+                badge_languages: "简体中文 · English · Español",
+                badge_offline: "100% 本地离线可用",
+                hero_audio_step: "步骤 03 · 夜间行动",
+                hero_audio_quote: "“梅林请睁眼，看清这黑夜中的爪牙…”",
+                tag_games_library: "支持游戏矩阵",
+                title_games_library: "经典阵营推理与聚会策略桌游",
+                subtitle_games_library: "每款游戏均配有精细打磨的停顿秒数、全角色精美立绘与防剧透流程引导。",
+                filter_all: "全部游戏 (6)",
+                filter_host: "纯语音主持模式",
+                filter_interactive: "互动法官模式",
+                badge_host: "语音主持",
+                badge_interactive: "互动法官",
+                game_avalon_name: "阿瓦隆",
+                game_avalon_players: "5–10 人对局",
+                game_avalon_theme: "亚瑟王阵营对抗",
+                game_avalon_desc: "完整夜间播报主持，深度支持梅林、刺客、莫甘娜、派西维尔、莫德雷德、奥伯伦及湖中仙女等丰富角色配置。",
+                game_onuw_name: "一夜终极狼人",
+                game_onuw_players: "3–10 人对局",
+                game_onuw_theme: "超快节奏身份交换",
+                game_onuw_desc: "精准掌控 10 分钟紧凑对局，涵盖预言家、强盗、捣蛋鬼、失眠者、化身幽灵、皮匠、酒鬼及爪牙等 16 种经典角色口令。",
+                game_salem_name: "猎巫镇 1692",
+                game_salem_players: "4–12 人对局",
+                game_salem_theme: "黑猫女巫审判",
+                game_salem_desc: "破晓（黑猫卡初夜传承）与黑夜（女巫暗杀、警长救赎）双模式独立播报，完美营造小镇人人自危的悬疑氛围。",
+                game_cheese_name: "奶酪大盗",
+                game_cheese_players: "4–8 人对局",
+                game_cheese_theme: "骰子点数与佯装",
+                game_cheese_desc: "分秒严谨的 1 点至 6 点逐时睡眠与睁眼机制，无需玩家充当裁判，自动指引大盗暗中行事与随从掩护。",
+                game_blade_name: "血与刃的白蔷薇",
+                game_blade_players: "5–10 人对局",
+                game_blade_theme: "教派纷争与近战对决",
+                game_blade_desc: "白蔷薇阵营欺瞒与对决轮次推进，为主教、狂信徒与暗刃提供清晰稳健的语音节点引导。",
+                game_werewords_name: "狼人箴言",
+                game_werewords_players: "4–10 人对局",
+                game_werewords_theme: "魔法密词推理",
+                game_werewords_desc: "交互法官独占模式：镇长秘密选词、4分钟猜词倒计时、是/否/也许标记扣减与终局狼人抓预言家判定。",
+                label_roles: "核心角色",
+                label_mechanic: "核心机制",
+                step_1_tag: "阶段：天黑请闭眼",
+                step_1_text: "“天黑请闭眼，所有玩家请将右手握拳放在桌上…”",
+                step_2_tag: "阶段：莫德雷德的爪牙",
+                step_2_text: "“除奥伯伦外，莫德雷德的爪牙请睁眼，互相确认身份…”",
+                step_3_tag: "阶段：梅林指认邪恶",
+                step_3_text: "“坏人请竖起大拇指。梅林请睁眼，看清身边的爪牙…”",
+                step_4_tag: "阶段：派西维尔辨识",
+                step_4_text: "“梅林与莫甘娜请竖起大拇指。派西维尔请睁眼，辨别两人…”",
+                btn_prev_step: "◀ 上一步",
+                btn_play_step: "▶ 播放当前句",
+                btn_next_step: "下一步 ▶",
+                btn_restart: "↺ 重新开始",
+                tag_live_engine: "双轨音频引擎",
+                title_live_engine: "告别慌乱，行云流水的聚会掌控",
+                desc_live_engine: "纵向指令时间线让节奏一目了然。当前正在播报的语句加粗放大并自动跟随滚动。若有门铃响起或临时讨论，单手轻点即可暂停或任意步重听。",
+                bullet_1_title: "录音棚级预录 + 智能降级：",
+                bullet_1_desc: "纯正人声预录 MP3，在特定扩展规则或无音频环境自动无缝平滑切换至系统神经网络高品质 TTS。",
+                bullet_2_title: "常亮防休眠机制：",
+                bullet_2_desc: "流程进行时杜绝 iOS 自动息屏锁屏，主持人无需反复指纹/面容解锁，随看随控。",
+                bullet_3_title: "iOS 17 触觉反馈：",
+                bullet_3_desc: "天黑闭眼、角色唤醒与计时归零瞬间均有细腻的震动反馈提醒，绝不遗漏关键节点。",
+                tag_toolbox: "全能随身工具",
+                title_toolbox: "聚会必备桌游工具箱",
+                subtitle_toolbox: "告别手忙脚乱的翻箱倒柜。四大核心工具以轻量弹层形式随叫随到，为主持人保驾护航。",
+                tool_dice_title: "3D 多面骰子",
+                tool_dice_desc: "支持同时投掷 1 至 4 枚骰子，涵盖 D6、D8、D10、D12 及自定义面数，支持锁定单颗重掷。",
+                btn_roll_dice: "投掷 6面骰",
+                tool_timer_title: "发言计时器",
+                tool_timer_desc: "内置 30秒 / 60秒 / 90秒 发言预设，亦可自由设定 1秒 至 30分钟，超时震动与提示音提醒。",
+                btn_timer_toggle: "开始倒计时",
+                tool_picker_title: "公平挑人抽签",
+                tool_picker_desc: "首家发言人、特权卡抽取神器，支持记录最近抽取历史与“排除已抽中玩家”避免重复。",
+                btn_picker_toggle: "随机抽取下一位",
+                tool_score_title: "实时计分板",
+                tool_score_desc: "自定义玩家昵称、快速加减分（-99至999）、一键归零以及按总得分一键降序排行。",
+                btn_score_add: "+2 分",
+                tag_features: "v1.2.0 全新架构",
+                title_features: "资深桌游玩家，为桌游玩家打造",
+                subtitle_features: "从零构建于原生 SwiftUI，专为聚会、团建与桌游吧现场的高效开局而生。",
+                feat_1_title: "双轨音频引擎",
+                feat_1_desc: "录音棚真实人声录音，搭配 Apple Neural TTS 及 Google Cloud TTS 降级容灾，无论在线离线都顺畅开局。",
+                feat_2_title: "交互分支法官",
+                feat_2_desc: "针对《狼人箴言》记词、《猎巫镇》审判等场景提供交互弹窗与分支判定，告别手忙脚乱记录纸牌。",
+                feat_3_title: "阵容预设与一键重开",
+                feat_3_desc: "常玩阵容一键保存为模版。对局结束后点击“再来一局”，无需重新配置即可立即展开第二轮对抗。",
+                feat_4_title: "外接音乐播放器联动",
+                feat_4_desc: "内置快捷启动 Apple Music、Spotify 与 YouTube Music，为主持人一键点播酒馆与中世纪背景氛围音乐。",
+                feat_5_title: "iOS 17 触觉与常亮",
+                feat_5_desc: "完全适配 iOS 17 动态振动引擎与屏幕防休眠，让主持人即使置身嘈杂客厅也能稳如泰山。",
+                feat_6_title: "全球三语本地化",
+                feat_6_desc: "完整支持简体中文、英语及西班牙语界面与语音播报，满足跨国朋友聚会与国际桌游交流需求。",
+                cta_tag: "准备好迎接下一场桌游夜了吗？",
+                cta_title: "今晚就让桌游夜变得 <em class=\"italic\">更精彩</em>。",
+                cta_desc: "前往 App Store 免费下载桌游语音助手。30 秒内即可快速开启一局 7 人阿瓦隆或一夜狼人杀。",
+                cta_store_btn: "前往 App Store 下载",
+                cta_feedback: "联系开发者反馈",
+                cta_note: "适配 iOS 17.0 或更高版本 · 支持 iPhone 与 iPad 设备",
+                footer_desc: "非官方桌游辅助工具，提供沉浸式语音播报、流程管理与法官判定功能，聚焦阵营推理类桌游。",
+                footer_games: "支持桌游",
+                footer_resources: "服务与合规",
+                legal_disclaimer: "<strong>版权与合规免责声明：</strong>桌游语音助手为非官方教育与个人娱乐辅助工具。应用内提供的游戏规则、角色信息及语音台词仅供玩家学习、研究与线下娱乐使用。所有相关桌游（包括《阿瓦隆》、《一夜终极狼人》、《猎巫镇 1692》、《奶酪大盗》、《血与刃的白蔷薇》、《狼人箴言》等）的版权与商标权均归原版权方所有。",
+                footer_version_tag: "iOS 正式发布版 v1.2.0 (Build 12) · 复古桌游质感设计"
+            }
+        };
+
+        let currentLang = 'en';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.getElementById('btn-lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('btn-lang-zh').classList.toggle('active', lang === 'zh');
+            
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (i18n[lang] && i18n[lang][key]) {
+                    el.innerHTML = i18n[lang][key];
+                }
+            });
+
+            document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : 'en';
+        }
+
+        // Filter Games
+        function filterGames(category) {
+            const tabs = ['all', 'host', 'interactive'];
+            tabs.forEach(t => {
+                const tab = document.getElementById('tab-filter-' + t);
+                if (tab) tab.classList.toggle('active', t === category);
+            });
+
+            const cards = document.querySelectorAll('.game-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const nav = document.querySelector('.nav-links');
+            if (nav.style.display === 'flex') {
+                nav.style.display = 'none';
+            } else {
+                nav.style.display = 'flex';
+                nav.style.flexDirection = 'column';
+                nav.style.position = 'absolute';
+                nav.style.top = '74px';
+                nav.style.left = '0';
+                nav.style.right = '0';
+                nav.style.background = 'rgba(248, 244, 236, 0.98)';
+                nav.style.padding = '20px';
+                nav.style.borderBottom = '2px solid var(--border-strong)';
+            }
+        }
+
+        // Interactive Timeline Simulation
+        let currentStepIdx = 0;
+        const totalSteps = 4;
+        let isSimulating = false;
+
+        function updateStepUI() {
+            for (let i = 0; i < totalSteps; i++) {
+                const el = document.getElementById('step-' + i);
+                if (el) el.classList.toggle('active', i === currentStepIdx);
+            }
+        }
+
+        function nextDemoStep() {
+            currentStepIdx = (currentStepIdx + 1) % totalSteps;
+            updateStepUI();
+        }
+
+        function prevDemoStep() {
+            currentStepIdx = (currentStepIdx - 1 + totalSteps) % totalSteps;
+            updateStepUI();
+        }
+
+        function resetDemoStep() {
+            currentStepIdx = 0;
+            updateStepUI();
+        }
+
+        function togglePlaySimulation() {
+            const btn = document.getElementById('btn-play-sim');
+            isSimulating = !isSimulating;
+            if (isSimulating) {
+                btn.innerText = currentLang === 'zh' ? '⏸ 暂停' : '⏸ Pause';
+                playChimeSound();
+                setTimeout(() => {
+                    nextDemoStep();
+                    btn.innerText = currentLang === 'zh' ? '▶ 播放当前句' : '▶ Play Step';
+                    isSimulating = false;
+                }, 2200);
+            } else {
+                btn.innerText = currentLang === 'zh' ? '▶ 播放当前句' : '▶ Play Step';
+            }
+        }
+
+        function toggleDemoAudio() {
+            togglePlaySimulation();
+        }
+
+        // Web Audio Synthesizer Beep for tactile demonstration
+        function playChimeSound() {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(440, ctx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 0.3);
+                gain.gain.setValueAtTime(0.12, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.4);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start();
+                osc.stop(ctx.currentTime + 0.4);
+            } catch(e) {}
+        }
+
+        // Toolbox Interactive Widgets
+        // 1. Dice Roller
+        const diceGlyphs = ['⚀ 1', '⚁ 2', '⚂ 3', '⚃ 4', '⚄ 5', '⚅ 6'];
+        function rollInteractiveDice() {
+            playChimeSound();
+            const el = document.getElementById('interactive-dice-val');
+            el.style.transform = 'scale(0.8)';
+            setTimeout(() => {
+                const idx = Math.floor(Math.random() * 6);
+                el.innerText = diceGlyphs[idx];
+                el.style.transform = 'scale(1.1)';
+                setTimeout(() => el.style.transform = 'scale(1)', 150);
+            }, 100);
+        }
+
+        // 2. Countdown Timer
+        let timerSec = 45;
+        let timerInterval = null;
+        function toggleInteractiveTimer() {
+            const el = document.getElementById('interactive-timer-val');
+            const btn = document.getElementById('btn-timer-toggle');
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+                btn.innerText = currentLang === 'zh' ? '继续倒计时' : 'Resume Timer';
+            } else {
+                playChimeSound();
+                btn.innerText = currentLang === 'zh' ? '暂停计时' : 'Pause Timer';
+                timerInterval = setInterval(() => {
+                    timerSec--;
+                    if (timerSec <= 0) {
+                        timerSec = 45;
+                        clearInterval(timerInterval);
+                        timerInterval = null;
+                        playChimeSound();
+                        btn.innerText = currentLang === 'zh' ? '重新开始' : 'Restart';
+                    }
+                    const m = String(Math.floor(timerSec / 60)).padStart(2, '0');
+                    const s = String(timerSec % 60).padStart(2, '0');
+                    el.innerText = `${m}:${s}`;
+                }, 1000);
+            }
+        }
+
+        // 3. Player Picker
+        let playerPool = [1, 2, 3, 4, 5, 6, 7, 8];
+        function pickRandomPlayer() {
+            playChimeSound();
+            const el = document.getElementById('interactive-picker-val');
+            const p = Math.floor(Math.random() * 8) + 1;
+            el.innerText = currentLang === 'zh' ? `玩家 #${p}` : `Player #${p}`;
+        }
+
+        // 4. Scoreboard
+        let currentScore = 12;
+        function addScoreInteractive() {
+            playChimeSound();
+            currentScore += 2;
+            document.getElementById('interactive-score-val').innerText = `${currentLang === 'zh' ? '得分' : 'Pts'}: ${currentScore}`;
+        }
+    </script>
 </body>
 </html>
-
