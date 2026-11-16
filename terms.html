@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Use — Board Game Audio Assistant</title>
-    <meta name="description" content="Terms of Use and End User License Agreement for Board Game Audio Assistant iOS app.">
+    <meta name="description" content="Terms of Use, StoreKit 2 In-App Purchase terms, and End User License Agreement for Board Game Audio Assistant iOS app.">
     <link rel="icon" type="image/png" href="assets/app_icon.png">
     <link rel="stylesheet" href="index.css">
     <style>
@@ -17,28 +17,23 @@
             box-shadow: 6px 8px 0 var(--border-strong);
             padding: 48px;
         }
-
         .policy-header {
             border-bottom: 2px dashed var(--border-color);
             padding-bottom: 24px;
             margin-bottom: 32px;
         }
-
         .policy-title {
             font-size: 2.6rem;
             margin-bottom: 8px;
         }
-
         .policy-meta {
             font-size: 0.88rem;
             color: var(--ink-muted);
             font-family: 'JetBrains Mono', monospace;
         }
-
         .policy-section {
             margin-bottom: 36px;
         }
-
         .policy-section h2 {
             font-size: 1.45rem;
             margin-bottom: 12px;
@@ -46,26 +41,22 @@
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 6px;
         }
-
         .policy-section p {
             font-size: 0.96rem;
             color: var(--ink-secondary);
             line-height: 1.7;
             margin-bottom: 14px;
         }
-
         .policy-section ul {
             margin-left: 24px;
             margin-bottom: 16px;
         }
-
         .policy-section li {
             font-size: 0.95rem;
             color: var(--ink-secondary);
             margin-bottom: 8px;
             line-height: 1.6;
         }
-
         .btn-back-home {
             display: inline-flex;
             align-items: center;
@@ -81,16 +72,17 @@
             transition: transform var(--transition-bounce);
             margin-top: 20px;
         }
-
         .btn-back-home:hover {
             transform: translate(-1px, -1px);
             box-shadow: 3.5px 4px 0 var(--border-strong);
         }
+        .lang-zh { display: none; }
+        html[lang="zh-Hans"] .lang-en { display: none; }
+        html[lang="zh-Hans"] .lang-zh { display: block; }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
     <header class="site-header">
         <div class="container navbar">
             <a href="index.html" class="brand">
@@ -99,82 +91,129 @@
                 </div>
                 <div class="brand-title">
                     <span class="brand-name">Board Game Audio</span>
-                    <span class="brand-version">Terms of Use</span>
+                    <span class="brand-version version-pill">v1.2.5</span>
                 </div>
             </a>
 
             <div class="nav-actions">
+                <div class="lang-toggle" role="group" aria-label="Language Selector">
+                    <button class="lang-btn active" id="btn-lang-en" onclick="setTermsLang('en')">EN</button>
+                    <button class="lang-btn" id="btn-lang-zh" onclick="setTermsLang('zh')">中文</button>
+                </div>
                 <a href="index.html" class="btn-nav-download" style="background: white; color: var(--ink) !important;">
-                    ← Back to Home
+                    ← Home
                 </a>
             </div>
         </div>
     </header>
 
     <main class="container">
-        <div class="policy-container">
+        <!-- ENGLISH -->
+        <div class="policy-container lang-en">
             <div class="policy-header">
                 <span class="section-tag">Legal Agreement</span>
                 <h1 class="policy-title">Terms of Use</h1>
-                <div class="policy-meta">Last Updated: September 2026 · App Version 1.2.0+</div>
+                <div class="policy-meta">Last Updated: November 2026 · App Version 1.2.5</div>
             </div>
 
             <div class="policy-section">
                 <h2>1. Acceptance of Terms</h2>
                 <p>
-                    By downloading, installing, or utilizing the <strong>Board Game Audio Assistant</strong> application on iOS, you agree to be bound by these Terms of Use. If you do not agree with any portion of these terms, please do not use the application.
+                    By downloading, installing, or utilizing <strong>Board Game Audio Assistant</strong> on iOS or iPadOS, you agree to be bound by these Terms of Use and Apple's Standard Licensed Application End User License Agreement (EULA).
                 </p>
             </div>
 
             <div class="policy-section">
-                <h2>2. Intellectual Property & Fair Use Disclaimer</h2>
-                <p>
-                    <strong>Board Game Audio Assistant</strong> is an independent, unofficial tabletop companion tool created for personal entertainment, research, and non-commercial educational guidance among friends and families.
-                </p>
+                <h2>2. In-App Purchases, Lifetime PRO &amp; Restore Purchases (StoreKit 2)</h2>
                 <ul>
                     <li>
-                        All copyrights, trademarks, game titles, and character identities for respective tabletop games (including but not limited to <em>The Resistance: Avalon</em>, <em>One Night Ultimate Werewolf</em>, <em>Salem 1692</em>, <em>Cheese Thief</em>, <em>Blood and Blade</em>, and <em>Werewords</em>) remain the exclusive property of their respective creators, publishers, and rights holders.
+                        <strong>Lifetime Ad-Free PRO (<code>com.avalon.lifetime_pro</code>):</strong> Offered as an optional one-time, non-consumable In-App Purchase via Apple StoreKit 2. It permanently removes banner and interstitial advertisements across the app and supports Apple <strong>Family Sharing</strong>.
                     </li>
                     <li>
-                        This application is not affiliated with, authorized, maintained, sponsored, or endorsed by any game publisher. Original audio scripts and UI implementations are designed solely to facilitate physical board game moderation.
+                        <strong>Restore Purchases:</strong> You may restore your Lifetime PRO entitlement at any time across compatible devices signed into the same Apple Account by tapping <em>Restore Purchases</em> in the Ad-Free Hub or Settings screen.
                     </li>
                     <li>
-                        If you are a copyright owner and have inquiries or requests regarding our fair-use presentation, please contact us immediately at <a href="mailto:fangdev1063@gmail.com" style="color: var(--accent-teal); font-weight: 700;">fangdev1063@gmail.com</a> for swift amicable resolution.
+                        <strong>24-Hour Rewarded Ad-Free Pass:</strong> Free-tier users may optionally watch a single rewarded advertisement to unlock temporary 24-hour ad-free access stored locally on the device.
+                    </li>
+                    <li>
+                        <strong>Billing &amp; Refunds:</strong> All payments are billed directly to your Apple Account upon confirmation of purchase. Refund requests are governed exclusively by Apple App Store policies (<a href="https://reportaproblem.apple.com" target="_blank" rel="noopener" style="color: var(--accent-teal);">reportaproblem.apple.com</a>).
                     </li>
                 </ul>
             </div>
 
             <div class="policy-section">
-                <h2>3. License & Use Restrictions</h2>
+                <h2>3. Intellectual Property &amp; Fair Use Disclaimer</h2>
                 <p>
-                    We grant you a revocable, non-exclusive, non-transferable, limited license to download and use the application on iOS devices that you own or control, in accordance with the Apple App Store Terms of Service.
+                    <strong>Board Game Audio Assistant</strong> is an independent, unofficial tabletop companion utility created to assist physical in-person board game sessions among friends and families.
                 </p>
-                <p>You agree not to:</p>
                 <ul>
-                    <li>Decompile, reverse engineer, or disassemble the application binaries.</li>
-                    <li>Extract bundled audio recordings or art assets for unauthorized commercial redistribution.</li>
-                    <li>Attempt to circumvent advertising or security mechanisms.</li>
+                    <li>
+                        All copyrights, trademarks, game titles, and character concepts for respective tabletop games (including <em>The Resistance: Avalon</em>, <em>One Night Ultimate Werewolf</em>, <em>Salem 1692</em>, <em>Dying Message</em>, <em>Cheese Thief</em>, <em>Blood and Blade</em>, and <em>Werewords</em>) remain the property of their respective creators and publishers.
+                    </li>
+                    <li>
+                        This application is not affiliated with, sponsored, or endorsed by any board game publisher. For inquiries, contact <a href="mailto:fangdev1063@gmail.com" style="color: var(--accent-teal); font-weight: 700;">fangdev1063@gmail.com</a>.
+                    </li>
                 </ul>
             </div>
 
             <div class="policy-section">
-                <h2>4. Disclaimer of Warranty & Limitation of Liability</h2>
+                <h2>4. License, Warranty Disclaimer &amp; Limitation of Liability</h2>
                 <p>
-                    The application is provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, whether express or implied. Under no circumstances shall the developer be liable for any indirect, incidental, consequential, or special damages arising out of or in connection with your use of the application.
+                    We grant you a revocable, non-exclusive, non-transferable, personal license to use the application on Apple-branded devices that you own or control. The application is provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind. Under no circumstances shall the developer be liable for any indirect, incidental, or consequential damages arising from use of the application.
                 </p>
             </div>
 
             <div class="policy-section">
                 <h2>5. Contact Information</h2>
                 <p>
-                    For questions, inquiries, or feedback regarding these Terms of Use, please reach out to:
-                </p>
-                <p>
-                    <strong>Developer Contact:</strong> <a href="mailto:fangdev1063@gmail.com" style="color: var(--accent-teal); font-weight: 700;">fangdev1063@gmail.com</a>
+                    <strong>Developer Support:</strong> <a href="mailto:fangdev1063@gmail.com" style="color: var(--accent-teal); font-weight: 700;">fangdev1063@gmail.com</a> ·
+                    <strong>Privacy Policy:</strong> <a href="privacy.html" style="color: var(--accent-teal);">View Privacy Policy</a>
                 </p>
             </div>
 
             <a href="index.html" class="btn-back-home">← Return to Home</a>
+        </div>
+
+        <!-- CHINESE -->
+        <div class="policy-container lang-zh">
+            <div class="policy-header">
+                <span class="section-tag">服务与授权协议</span>
+                <h1 class="policy-title">使用条款</h1>
+                <div class="policy-meta">更新日期：2026年11月 · 同步版本 v1.2.5</div>
+            </div>
+
+            <div class="policy-section">
+                <h2>1. 条款接受</h2>
+                <p>
+                    下载、安装或使用<strong>桌游语音法官（Board Game Audio Assistant）</strong>即表示您同意受本使用条款及 Apple 标准最终用户许可协议（EULA）约束。
+                </p>
+            </div>
+
+            <div class="policy-section">
+                <h2>2. 应用内购买、终身免广告买断与恢复购买（StoreKit 2）</h2>
+                <ul>
+                    <li><strong>终身免广告专业版（<code>com.avalon.lifetime_pro</code>）：</strong>通过 Apple StoreKit 2 提供的一次性买断（非消耗型）内购，永久移除应用内所有横幅与插屏广告，并支持 Apple <strong>家人共享（Family Sharing）</strong>。</li>
+                    <li><strong>恢复购买（Restore Purchases）：</strong>更换设备或重装应用后，您可随时在“免广告中心”或“设置”页面点击“恢复购买”免费恢复已购权益。</li>
+                    <li><strong>24 小时激励免广告通行证：</strong>免费版用户可自愿观看一次激励视频解锁本机 24 小时免广告体验。</li>
+                    <li><strong>计费与退款：</strong>所有交易均通过您的 Apple 账户结算，退款申请请遵循 Apple 官方流程（<a href="https://reportaproblem.apple.com" target="_blank" rel="noopener" style="color: var(--accent-teal);">reportaproblem.apple.com</a>）。</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2>3. 知识产权与非官方独立工具免责声明</h2>
+                <p>
+                    本应用为独立开发的线下实体桌游聚会辅助工具，旨在提供语音播报、局域网发牌与计分辅助。《阿瓦隆》《一夜终极狼人杀》《塞勒姆 1692》《请留遗言》《奶酪大盗》《刀剑与鲜血》《狼人真言》等实体桌游的名称与相关知识产权均归各自原出版商及权利人所有，本应用与各官方出版商无隶属或授权关系。
+                </p>
+            </div>
+
+            <div class="policy-section">
+                <h2>4. 许可范围与免责声明</h2>
+                <p>
+                    本应用按“现状（AS IS）”提供个人非商业使用许可，不对任何间接或附带损失承担赔偿责任。如有疑问请联系开发者邮箱：<a href="mailto:fangdev1063@gmail.com" style="color: var(--accent-teal); font-weight: 700;">fangdev1063@gmail.com</a>。
+                </p>
+            </div>
+
+            <a href="index.html" class="btn-back-home">← 返回首页</a>
         </div>
     </main>
 
@@ -184,5 +223,12 @@
         </div>
     </footer>
 
+    <script>
+        function setTermsLang(lang) {
+            document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : 'en';
+            document.getElementById('btn-lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('btn-lang-zh').classList.toggle('active', lang === 'zh');
+        }
+    </script>
 </body>
 </html>

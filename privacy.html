@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy — Board Game Audio Assistant</title>
-    <meta name="description" content="Privacy Policy for Board Game Audio Assistant iOS application. Information on data practices, advertising, microphone permissions, and local storage.">
+    <meta name="description" content="Privacy Policy for Board Game Audio Assistant iOS application. Information on local sandbox storage, peer-to-peer Wi-Fi rooms, microphone permissions, StoreKit 2 In-App Purchases, and Google AdMob / UMP / ATT.">
     <link rel="icon" type="image/png" href="assets/app_icon.png">
     <link rel="stylesheet" href="index.css">
     <style>
@@ -17,28 +17,23 @@
             box-shadow: 6px 8px 0 var(--border-strong);
             padding: 48px;
         }
-
         .policy-header {
             border-bottom: 2px dashed var(--border-color);
             padding-bottom: 24px;
             margin-bottom: 32px;
         }
-
         .policy-title {
             font-size: 2.6rem;
             margin-bottom: 8px;
         }
-
         .policy-meta {
             font-size: 0.88rem;
             color: var(--ink-muted);
             font-family: 'JetBrains Mono', monospace;
         }
-
         .policy-section {
             margin-bottom: 36px;
         }
-
         .policy-section h2 {
             font-size: 1.45rem;
             margin-bottom: 12px;
@@ -46,30 +41,25 @@
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 6px;
         }
-
         .policy-section p {
             font-size: 0.96rem;
             color: var(--ink-secondary);
             line-height: 1.7;
             margin-bottom: 14px;
         }
-
         .policy-section ul {
             margin-left: 24px;
             margin-bottom: 16px;
         }
-
         .policy-section li {
             font-size: 0.95rem;
             color: var(--ink-secondary);
             margin-bottom: 8px;
             line-height: 1.6;
         }
-
         .policy-section strong {
             color: var(--ink);
         }
-
         .policy-highlight-box {
             background: var(--paper-bg);
             border: 1.5px solid var(--border-strong);
@@ -78,7 +68,6 @@
             margin: 18px 0;
             box-shadow: 2.5px 3px 0 var(--border-strong);
         }
-
         .btn-back-home {
             display: inline-flex;
             align-items: center;
@@ -94,16 +83,17 @@
             transition: transform var(--transition-bounce);
             margin-top: 20px;
         }
-
         .btn-back-home:hover {
             transform: translate(-1px, -1px);
             box-shadow: 3.5px 4px 0 var(--border-strong);
         }
+        .lang-zh { display: none; }
+        html[lang="zh-Hans"] .lang-en { display: none; }
+        html[lang="zh-Hans"] .lang-zh { display: block; }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
     <header class="site-header">
         <div class="container navbar">
             <a href="index.html" class="brand">
@@ -112,109 +102,150 @@
                 </div>
                 <div class="brand-title">
                     <span class="brand-name">Board Game Audio</span>
-                    <span class="brand-version">Privacy Policy</span>
+                    <span class="brand-version version-pill">v1.2.5</span>
                 </div>
             </a>
 
             <div class="nav-actions">
+                <div class="lang-toggle" role="group" aria-label="Language Selector">
+                    <button class="lang-btn active" id="btn-lang-en" onclick="setPolicyLang('en')">EN</button>
+                    <button class="lang-btn" id="btn-lang-zh" onclick="setPolicyLang('zh')">中文</button>
+                </div>
                 <a href="index.html" class="btn-nav-download" style="background: white; color: var(--ink) !important;">
-                    ← Back to Home
+                    ← Home
                 </a>
             </div>
         </div>
     </header>
 
     <main class="container">
-        <div class="policy-container">
+        <!-- ENGLISH -->
+        <div class="policy-container lang-en">
             <div class="policy-header">
-                <span class="section-tag">Legal & Compliance</span>
+                <span class="section-tag">Legal &amp; Compliance</span>
                 <h1 class="policy-title">Privacy Policy</h1>
-                <div class="policy-meta">Last Updated: September 2026 · Effective for Version 1.2.0+</div>
+                <div class="policy-meta">Last Updated: November 2026 · App Version 1.2.5</div>
             </div>
 
             <div class="policy-section">
                 <h2>1. Introduction</h2>
                 <p>
-                    This Privacy Policy explains how <strong>Board Game Audio Assistant</strong> ("we", "our", or "the application") handles your information when using our iOS application. We believe in total transparency, minimal data retention, and player privacy.
+                    This Privacy Policy explains how <strong>Board Game Audio Assistant</strong> ("we", "our", or "the application") handles information when you use our iOS, iPadOS, and iPhone Duo application. We design our software offline-first with minimal data retention and strict local sandboxing.
                 </p>
                 <div class="policy-highlight-box">
-                    <strong>Summary:</strong> We do not require account registration, do not collect personal identities, and do not track private communications. Most preferences and recordings reside 100% locally on your iPhone or iPad.
+                    <strong>Summary:</strong> Zero account registration, zero cloud user profiles, and zero tracking of private conversations. Custom scripts, voice recordings, local Wi-Fi rooms, and match scoreboards remain strictly on your device.
                 </div>
             </div>
 
             <div class="policy-section">
-                <h2>2. Information We Handle</h2>
+                <h2>2. On-Device Sandbox &amp; Permissions</h2>
                 <ul>
                     <li>
-                        <strong>Local App Preferences:</strong> Your voice narration settings (preferred language, playback volume, speech rate, and selected TTS voice) are stored solely on your local device via Apple's standard <code>UserDefaults</code> system.
+                        <strong>Local App Preferences &amp; Sandbox Storage:</strong> Voice settings (language, volume, speech rate), custom game configs, and scoreboard histories are stored locally in Apple's app sandbox and <code>UserDefaults</code>, with cache/rebuildable directories marked <code>isExcludedFromBackup = true</code>.
                     </li>
                     <li>
-                        <strong>Custom Narration & Microphone (Optional):</strong> If you use the voice studio feature to record custom host narration, the app requests microphone access. Recorded audio files remain strictly inside your device's sandboxed local storage. Audio recordings are never uploaded to any remote server.
+                        <strong>Microphone Permission (<code>NSMicrophoneUsageDescription</code>, Optional):</strong> Requested only when you enter the Voice Studio to record custom host lines. Recordings stay 100% inside your device's local sandbox and are never uploaded to external servers.
                     </li>
                     <li>
-                        <strong>Anonymous Gameplay Metrics:</strong> The app records lightweight anonymous session metrics (such as rounds completed, favorite game selections, or crash occurrences) stored locally to streamline quick rematch workflows.
+                        <strong>Local Wi-Fi Room (<code>NSLocalNetworkUsageDescription</code>, Optional):</strong> Requested only when hosting or joining a nearby game room over the same Wi-Fi or personal hotspot via Bonjour (<code>_avalon-room._tcp</code>). Secret role dealing and mission votes travel strictly peer-to-peer between local devices without touching cloud servers.
                     </li>
                     <li>
-                        <strong>No Sensitive Personal Data:</strong> We do not ask for or collect names, email addresses, contacts, exact GPS locations, or financial payment details.
+                        <strong>No Personal Identity Collection:</strong> We never ask for or collect your name, phone number, email address, contacts, GPS coordinates, or payment card details.
                     </li>
                 </ul>
             </div>
 
             <div class="policy-section">
-                <h2>3. Advertising & Analytics (Google AdMob)</h2>
+                <h2>3. StoreKit 2 In-App Purchases &amp; Ad-Free PRO</h2>
                 <p>
-                    Board Game Audio Assistant is free to download and utilizes <strong>Google AdMob</strong> to serve advertisements.
+                    Optional one-time In-App Purchases (such as <strong>Lifetime Ad-Free PRO</strong>, <code>com.avalon.lifetime_pro</code>) and <strong>Restore Purchases</strong> are processed directly and exclusively by Apple via native <strong>StoreKit 2</strong>. We never receive or store your billing address or payment credentials. Once Lifetime PRO is unlocked (including via Apple Family Sharing), ad requests are permanently disabled on your device.
+                </p>
+            </div>
+
+            <div class="policy-section">
+                <h2>4. Advertising, UMP Consent &amp; ATT (Google AdMob)</h2>
+                <p>
+                    The free tier of Board Game Audio Assistant utilizes <strong>Google AdMob</strong> (and Google User Messaging Platform, <strong>UMP</strong>, for GDPR/regional privacy consent) to display banner, interstitial, and optional 24-hour rewarded ad-free pass advertisements.
                 </p>
                 <ul>
                     <li>
-                        <strong>App Tracking Transparency (ATT):</strong> On iOS 14.5 and later, we ask for your explicit permission prior to utilizing advertising identifiers (IDFA) for personalized advertisements. If you choose "Ask App not to Track", AdMob delivers only contextual, non-personalized ads.
+                        <strong>App Tracking Transparency (ATT / <code>NSUserTrackingUsageDescription</code>):</strong> On iOS 14.5+, we request explicit permission before accessing the advertising identifier (IDFA). If you select "Ask App Not to Track", AdMob serves non-personalized contextual ads only.
                     </li>
                     <li>
-                        <strong>Publisher Verification:</strong> Our developer domain hosts the verified <code>app-ads.txt</code> entry (Google AdMob Publisher ID: <code>pub-2034595640300550</code>) pursuant to IAB Tech Lab standards.
+                        <strong>Authorized Digital Sellers:</strong> Verified via <a href="/app-ads.txt" style="color: var(--accent-teal); text-decoration: underline;">/app-ads.txt</a> (Publisher ID: <code>pub-2034595640300550</code>).
                     </li>
                     <li>
-                        For more details regarding how Google processes advertising data, please review Google's Privacy & Terms: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener" style="color: var(--accent-teal); text-decoration: underline;">Google Advertising Privacy</a>.
+                        Learn more at <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener" style="color: var(--accent-teal); text-decoration: underline;">Google Advertising Privacy &amp; Terms</a>.
                     </li>
                 </ul>
             </div>
 
             <div class="policy-section">
-                <h2>4. Speech Synthesis & Third-Party Services</h2>
+                <h2>5. Speech Synthesis &amp; Children's Privacy</h2>
                 <p>
-                    The app provides speech guidance via two mechanisms:
-                </p>
-                <ul>
-                    <li><strong>Pre-recorded Studio Audio:</strong> Bundled directly inside the iOS app bundle, playing offline without any network usage.</li>
-                    <li><strong>Neural Text-to-Speech (TTS):</strong> Utilizes Apple's on-device <code>AVSpeechSynthesizer</code> or Google Cloud TTS API for dynamic step variations. No personal user data is attached to speech requests.</li>
-                </ul>
-            </div>
-
-            <div class="policy-section">
-                <h2>5. Children's Privacy</h2>
-                <p>
-                    Board Game Audio Assistant is designed for general audiences and families. We do not knowingly solicit or collect personal information from children under the age of 13.
+                    Pre-recorded studio narration plays 100% offline from the app bundle, with fallback to Apple's on-device <code>AVSpeechSynthesizer</code>. We do not knowingly solicit or collect personal data from children under 13.
                 </p>
             </div>
 
             <div class="policy-section">
-                <h2>6. Changes to This Policy</h2>
+                <h2>6. Contact &amp; Support</h2>
                 <p>
-                    We may update this Privacy Policy from time to time to reflect new game additions, regulatory obligations, or operating system upgrades. Any revisions will update the "Last Updated" date at the top of this page.
-                </p>
-            </div>
-
-            <div class="policy-section">
-                <h2>7. Contact & Support</h2>
-                <p>
-                    If you have questions, feedback, or concerns regarding this Privacy Policy or your data, please contact the developer directly:
-                </p>
-                <p>
-                    <strong>Email:</strong> <a href="mailto:fangdev1063@gmail.com" style="color: var(--accent-teal); font-weight: 700;">fangdev1063@gmail.com</a><br>
-                    <strong>App Store Page:</strong> <a href="https://apps.apple.com/app/id6755318411" target="_blank" rel="noopener" style="color: var(--accent-teal);">Board Game Audio Assistant on the App Store</a>
+                    <strong>Official Developer Email:</strong> <a href="mailto:fangdev1063@gmail.com" style="color: var(--accent-teal); font-weight: 700;">fangdev1063@gmail.com</a><br>
+                    <strong>Terms of Use:</strong> <a href="terms.html" style="color: var(--accent-teal);">View Terms of Use</a> ·
+                    <strong>App Store:</strong> <a href="https://apps.apple.com/app/id6755318411" target="_blank" rel="noopener" style="color: var(--accent-teal);">Board Game Audio Assistant</a>
                 </p>
             </div>
 
             <a href="index.html" class="btn-back-home">← Return to Home</a>
+        </div>
+
+        <!-- CHINESE -->
+        <div class="policy-container lang-zh">
+            <div class="policy-header">
+                <span class="section-tag">隐私与合规声明</span>
+                <h1 class="policy-title">隐私政策</h1>
+                <div class="policy-meta">更新日期：2026年11月 · 同步版本 v1.2.5</div>
+            </div>
+
+            <div class="policy-section">
+                <h2>1. 核心承诺</h2>
+                <p>
+                    <strong>桌游语音法官（Board Game Audio Assistant）</strong>坚持离线优先与最小化数据原则。应用无需注册账号，不建立云端用户画像，所有自定义板子、录音音频、局域网房间与记分历史均 100% 保存在您的设备本地沙盒中。
+                </p>
+            </div>
+
+            <div class="policy-section">
+                <h2>2. 本地沙盒存储与系统权限说明</h2>
+                <ul>
+                    <li><strong>本地偏好与备份隔离：</strong>语言、语速、音量及历史记分保存在本地 <code>UserDefaults</code> 与应用沙盒中，可重建缓存目录声明 <code>isExcludedFromBackup = true</code>。</li>
+                    <li><strong>麦克风权限（可选）：</strong>仅在您主动进入“录音工坊”录制自定义主持语音时请求，录音文件严格保存在本机沙盒，绝不上传至任何服务器。</li>
+                    <li><strong>本地局域网权限（可选）：</strong>仅在您主动创建或加入面对面同 Wi-Fi 房间（Bonjour <code>_avalon-room._tcp</code>）时请求，秘密发牌与投票数据仅在局域网设备间点对点传输，不经过外网云端。</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2>3. StoreKit 2 应用内购买与免广告权益</h2>
+                <p>
+                    应用提供可选的一次性买断内购（<strong>终身免广告专业版</strong>，<code>com.avalon.lifetime_pro</code>，支持 Apple 家人共享与一键<strong>恢复购买</strong>）。所有支付均由 Apple 官方 <strong>StoreKit 2</strong> 安全处理，开发者不会接触或存储任何支付账户信息。解锁专业版后，应用将在本地永久关闭广告请求。
+                </p>
+            </div>
+
+            <div class="policy-section">
+                <h2>4. 广告服务、UMP 同意框架与 ATT 追踪透明</h2>
+                <p>
+                    免费版集成 <strong>Google AdMob</strong>（含 Google UMP 隐私同意弹窗与可选 24 小时激励视频免广告通行证）。在 iOS 14.5+ 设备上，应用遵循 Apple <strong>App Tracking Transparency（ATT）</strong>规范征求授权；若您选择“要求应用不跟踪”，仅展示非个性化上下文广告。授权卖家记录详见 <a href="/app-ads.txt" style="color: var(--accent-teal); text-decoration: underline;">/app-ads.txt</a>（<code>pub-2034595640300550</code>）。
+                </p>
+            </div>
+
+            <div class="policy-section">
+                <h2>5. 联系开发者</h2>
+                <p>
+                    <strong>官方支持邮箱：</strong><a href="mailto:fangdev1063@gmail.com" style="color: var(--accent-teal); font-weight: 700;">fangdev1063@gmail.com</a><br>
+                    <strong>相关协议：</strong><a href="terms.html" style="color: var(--accent-teal);">使用条款 (Terms of Use)</a>
+                </p>
+            </div>
+
+            <a href="index.html" class="btn-back-home">← 返回首页</a>
         </div>
     </main>
 
@@ -224,5 +255,12 @@
         </div>
     </footer>
 
+    <script>
+        function setPolicyLang(lang) {
+            document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : 'en';
+            document.getElementById('btn-lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('btn-lang-zh').classList.toggle('active', lang === 'zh');
+        }
+    </script>
 </body>
 </html>

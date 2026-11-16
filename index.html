@@ -25,6 +25,23 @@
     <link rel="icon" type="image/png" href="assets/app_icon.png">
     <link rel="apple-touch-icon" href="assets/app_icon.png">
     <link rel="stylesheet" href="index.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Board Game Audio Assistant",
+      "operatingSystem": "iOS 18.0+, iPadOS 18.0+",
+      "applicationCategory": "UtilitiesApplication",
+      "softwareVersion": "1.2.5",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "url": "https://boardgameaudioassistant.netlify.app/",
+      "downloadUrl": "https://apps.apple.com/app/id6755318411"
+    }
+    </script>
 </head>
 <body>
 
@@ -39,7 +56,7 @@
                 </div>
                 <div class="brand-title">
                     <span class="brand-name" data-i18n="brand_name">Board Game Audio</span>
-                    <span class="brand-version">v1.2.1 · iOS 17+</span>
+                    <span class="brand-version version-pill">v1.2.5 · iOS 18+</span>
                 </div>
             </a>
 
@@ -115,7 +132,7 @@
                     <div class="hero-badges-row">
                         <div class="hero-badge-pill">
                             <span class="hero-badge-dot"></span>
-                            <span data-i18n="badge_games_count">6 Supported Games</span>
+                            <span data-i18n="badge_games_count">7 Supported Games</span>
                         </div>
                         <div class="hero-badge-pill">
                             <span class="hero-badge-dot" style="background: var(--accent-gold);"></span>
@@ -123,7 +140,7 @@
                         </div>
                         <div class="hero-badge-pill">
                             <span class="hero-badge-dot" style="background: var(--accent-red);"></span>
-                            <span data-i18n="badge_offline">100% Offline Ready</span>
+                            <span data-i18n="badge_offline">Local Wi-Fi &amp; 100% Offline</span>
                         </div>
                     </div>
                 </div>
@@ -172,7 +189,7 @@
                 </div>
 
                 <div class="filter-tabs">
-                    <button class="tab-btn active" onclick="filterGames('all')" id="tab-filter-all" data-i18n="filter_all">All Games (6)</button>
+                    <button class="tab-btn active" onclick="filterGames('all')" id="tab-filter-all" data-i18n="filter_all">All Games (7)</button>
                     <button class="tab-btn" onclick="filterGames('host')" id="tab-filter-host" data-i18n="filter_host">Voice Host Mode</button>
                     <button class="tab-btn" onclick="filterGames('interactive')" id="tab-filter-interactive" data-i18n="filter_interactive">Interactive Judge Mode</button>
                 </div>
@@ -347,6 +364,35 @@
                         </div>
                     </div>
 
+                    <!-- Game 7: Dying Message -->
+                    <div class="game-card" data-category="host">
+                        <div class="game-card-top">
+                            <img src="assets/games/dying_message.png" alt="Dying Message" class="game-card-art">
+                            <span class="game-mode-badge badge-host" data-i18n="badge_host">Host Mode</span>
+                        </div>
+                        <div class="game-card-body">
+                            <div class="game-title-row">
+                                <h3 class="game-name" data-i18n="game_dying_name">Dying Message</h3>
+                                <span class="info-pill">15 min</span>
+                            </div>
+                            <div class="game-pills-row">
+                                <span class="info-pill" data-i18n="game_dying_players">4–15 Players</span>
+                                <span class="info-pill" data-i18n="game_dying_theme">Forensic Clues</span>
+                            </div>
+                            <p class="game-desc" data-i18n="game_dying_desc">
+                                Studio night guidance for Forensic Scientist, Culprit, Accomplice, Witness, Detective, and Guard Dog crime-scene clue deduction.
+                            </p>
+                            <div class="character-strip">
+                                <span class="strip-label" data-i18n="label_roles">Key Roles</span>
+                                <div class="strip-avatars">
+                                    <img src="assets/games/dying_message_forensic.png" alt="Forensic" class="strip-avatar" title="Forensic">
+                                    <img src="assets/games/dying_message_culprit.png" alt="Culprit" class="strip-avatar" title="Culprit">
+                                    <img src="assets/games/dying_message_detective.png" alt="Detective" class="strip-avatar" title="Detective">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -507,12 +553,12 @@
         </section>
 
         <!-- ==============================================================================
-             CORE FEATURES GRID (v1.2.0 HIGHLIGHTS)
+             CORE FEATURES GRID (v1.2.5 HIGHLIGHTS)
              ============================================================================== -->
         <section id="features" class="section">
             <div class="container">
                 <div class="section-header-center">
-                    <span class="section-tag" data-i18n="tag_features">v1.2.1 Architecture</span>
+                    <span class="section-tag" data-i18n="tag_features">v1.2.5 Architecture</span>
                     <h2 class="section-title" data-i18n="title_features">Built by Tabletop Players, for Players</h2>
                     <p class="section-subtitle" data-i18n="subtitle_features">
                         Designed from the ground up for seamless offline game nights with friends, family, and board game club hosts.
@@ -521,50 +567,50 @@
 
                 <div class="features-grid">
                     <div class="feature-box">
-                        <div class="feature-icon-wrapper box-teal">🎙️</div>
-                        <h3 class="feature-title" data-i18n="feat_1_title">Dual Audio Engine</h3>
+                        <div class="feature-icon-wrapper box-teal">📡</div>
+                        <h3 class="feature-title" data-i18n="feat_1_title">Local Wi-Fi Secret Room</h3>
                         <p class="feature-description" data-i18n="feat_1_desc">
-                            High-fidelity studio recorded voice clips with automatic fallback to Apple Neural TTS & Google Cloud TTS when offline or custom rules are chosen.
+                            Create a peer-to-peer room over local Wi-Fi or hotspot with zero internet required. Automatically deal 3D secret role cards and collect anonymous quest votes on each player's phone.
                         </p>
                     </div>
 
                     <div class="feature-box">
-                        <div class="feature-icon-wrapper box-gold">⚖️</div>
-                        <h3 class="feature-title" data-i18n="feat_2_title">Interactive Judge Mode</h3>
+                        <div class="feature-icon-wrapper box-gold">🧠</div>
+                        <h3 class="feature-title" data-i18n="feat_2_title">Avalon Probability Solver</h3>
                         <p class="feature-description" data-i18n="feat_2_desc">
-                            Branching logic handles complicated scenarios like Werewords token tallies, Salem dawn accusations, and night elimination checks without manual notes.
+                            Bayesian deduction engine computes real-time Merlin, Morgana, Percival, and Minion probabilities from mission teams and vote patterns for deep post-game analysis.
                         </p>
                     </div>
 
                     <div class="feature-box">
-                        <div class="feature-icon-wrapper box-red">⚡</div>
-                        <h3 class="feature-title" data-i18n="feat_3_title">Presets & Quick Rematch</h3>
+                        <div class="feature-icon-wrapper box-red">🎙️</div>
+                        <h3 class="feature-title" data-i18n="feat_3_title">Studio Trilingual Audio</h3>
                         <p class="feature-description" data-i18n="feat_3_desc">
-                            Save your regular game night roster configs into favorite presets. Hit 'Quick Rematch' after a game ends to jump right into round two in 1 tap.
+                            High-fidelity studio voice packs in English, Simplified Chinese, and Spanish, plus a built-in Voice Studio to record custom party narration and save favorite presets.
                         </p>
                     </div>
 
                     <div class="feature-box">
-                        <div class="feature-icon-wrapper box-purple">🎵</div>
-                        <h3 class="feature-title" data-i18n="feat_4_title">Tavern Ambiance Music</h3>
+                        <div class="feature-icon-wrapper box-purple">⚖️</div>
+                        <h3 class="feature-title" data-i18n="feat_4_title">Interactive Judge &amp; Catalog</h3>
                         <p class="feature-description" data-i18n="feat_4_desc">
-                            One-tap quick launcher for Apple Music, Spotify, and YouTube Music. Mix atmospheric tavern medieval background music alongside the voice narrator.
+                            Branching judge workflows for Werewords and Salem 1692 alongside an offline BGG-curated tabletop rules vault with recommended player counts and role lineups.
                         </p>
                     </div>
 
                     <div class="feature-box">
                         <div class="feature-icon-wrapper box-teal">📱</div>
-                        <h3 class="feature-title" data-i18n="feat_5_title">iOS 17 Sensory Experience</h3>
+                        <h3 class="feature-title" data-i18n="feat_5_title">iPhone Duo &amp; iPad Ready</h3>
                         <p class="feature-description" data-i18n="feat_5_desc">
-                            Built natively in SwiftUI with iOS 17 sensory feedback. Keep-awake screen control prevents dark lockouts during long discussion phases.
+                            Seamless folded-to-unfolded continuity on iPhone Duo, iPad Split View multitasking, tactile haptics, and automatic screen keep-awake during night phases.
                         </p>
                     </div>
 
                     <div class="feature-box">
-                        <div class="feature-icon-wrapper box-gold">🌐</div>
-                        <h3 class="feature-title" data-i18n="feat_6_title">Trilingual Localization</h3>
+                        <div class="feature-icon-wrapper box-gold">👑</div>
+                        <h3 class="feature-title" data-i18n="feat_6_title">Optional Lifetime PRO</h3>
                         <p class="feature-description" data-i18n="feat_6_desc">
-                            Full voice and interface localization in English, Simplified Chinese (简体中文), and Spanish (Español) for international tabletop groups.
+                            100% free core features with optional one-time Lifetime Ad-Free PRO (Family Sharing &amp; Restore Purchases supported) or a 24-hour rewarded ad-free pass.
                         </p>
                     </div>
                 </div>
@@ -597,7 +643,7 @@
                     </div>
 
                     <p class="cta-requirement-note" data-i18n="cta_note">
-                        Requires iOS 17.0 or later · Compatible with iPhone and iPad
+                        Requires iOS 18.0 or later · Compatible with iPhone, iPhone Duo, and iPad
                     </p>
                 </div>
             </div>
@@ -613,7 +659,7 @@
                 <div class="footer-brand-col">
                     <div class="footer-brand-title" data-i18n="brand_name">Board Game Audio Assistant</div>
                     <p class="footer-brand-desc" data-i18n="footer_desc">
-                        An unofficial tabletop companion app providing voice guidance, flow management, and smart judge utilities for social deduction board games.
+                        An unofficial tabletop companion app providing voice guidance, local Wi-Fi secret dealing, and smart judge utilities for social deduction board games.
                     </p>
                 </div>
 
@@ -623,7 +669,7 @@
                         <a href="#games" class="footer-link">Avalon</a>
                         <a href="#games" class="footer-link">One Night Werewolf</a>
                         <a href="#games" class="footer-link">Salem 1692</a>
-                        <a href="#games" class="footer-link">Werewords</a>
+                        <a href="#games" class="footer-link">Dying Message</a>
                     </div>
 
                     <div class="footer-nav-group">
@@ -638,13 +684,13 @@
 
             <div class="footer-legal-notice">
                 <p data-i18n="legal_disclaimer">
-                    <strong>Disclaimer:</strong> Board Game Audio Assistant is an unofficial educational and entertainment utility. Game rules, roles, and voice narratives are provided solely for player convenience and learning purposes. All copyrights, trademarks, and intellectual property rights relating to the respective board games (such as Avalon, One Night Ultimate Werewolf, Salem 1692, Cheese Thief, Blood and Blade, and Werewords) belong strictly to their original authors and publishers.
+                    <strong>Disclaimer:</strong> Board Game Audio Assistant is an unofficial educational and entertainment utility. Game rules, roles, and voice narratives are provided solely for player convenience and learning purposes. All copyrights, trademarks, and intellectual property rights relating to the respective board games (such as Avalon, One Night Ultimate Werewolf, Salem 1692, Dying Message, Cheese Thief, Blood and Blade, and Werewords) belong strictly to their original authors and publishers.
                 </p>
             </div>
 
             <div class="footer-bottom">
                 <p>&copy; 2026 Board Game Audio Assistant. All rights reserved.</p>
-                <p data-i18n="footer_version_tag">iOS Release v1.2.1 (Build 13) · Designed with Retro Aesthetics</p>
+                <p data-i18n="footer_version_tag">iOS Release v1.2.5 (Build 18) · Designed with Retro Aesthetics</p>
             </div>
         </div>
     </footer>
@@ -670,15 +716,15 @@
                 hero_desc: "Say goodbye to awkward peeking, missed night steps, and chaotic rule disputes. Board Game Audio Assistant brings studio voice narration, interactive judge branching, and smart tabletop tools to your board game gatherings.",
                 download_label: "Download On The",
                 btn_explore: "Explore Games",
-                badge_games_count: "6 Supported Games",
+                badge_games_count: "7 Supported Games",
                 badge_languages: "English · 中文 · Español",
-                badge_offline: "100% Offline Ready",
+                badge_offline: "Local Wi-Fi & 100% Offline",
                 hero_audio_step: "Step 03 · Night Phase",
                 hero_audio_quote: "\"Merlin, open your eyes to see evil...\"",
                 tag_games_library: "Curated Game Library",
                 title_games_library: "Popular Social Deduction & Strategy Games",
                 subtitle_games_library: "Every game features meticulously timed night scripts, role avatar previews, and zero-spoiler voice coordination.",
-                filter_all: "All Games (6)",
+                filter_all: "All Games (7)",
                 filter_host: "Voice Host Mode",
                 filter_interactive: "Interactive Judge Mode",
                 badge_host: "Host Mode",
@@ -707,6 +753,10 @@
                 game_werewords_players: "4–10 Players",
                 game_werewords_theme: "Word Guessing",
                 game_werewords_desc: "Features Interactive Judge Mode: Mayor secret magic word picker, 4-minute guess countdown, Yes/No token counter, and Seer/Werewolf endgame reveal.",
+                game_dying_name: "Dying Message",
+                game_dying_players: "4–15 Players",
+                game_dying_theme: "Forensic Clues",
+                game_dying_desc: "Studio night guidance for Forensic Scientist, Culprit, Accomplice, Witness, Detective, and Guard Dog crime-scene clue deduction.",
                 label_roles: "Key Roles",
                 label_mechanic: "Mechanic",
                 step_1_tag: "Phase: Night Fall",
@@ -745,32 +795,32 @@
                 tool_score_title: "Live Scoreboard",
                 tool_score_desc: "Player nicknames, rapid increment/decrement (-99 to 999), instant zero reset, and auto-sorting by highest score.",
                 btn_score_add: "+2 Points",
-                tag_features: "v1.2.1 Architecture",
+                tag_features: "v1.2.5 Architecture",
                 title_features: "Built by Tabletop Players, for Players",
                 subtitle_features: "Designed from the ground up for seamless offline game nights with friends, family, and board game club hosts.",
-                feat_1_title: "Dual Audio Engine",
-                feat_1_desc: "High-fidelity studio recorded voice clips with automatic fallback to Apple Neural TTS & Google Cloud TTS when offline or custom rules are chosen.",
-                feat_2_title: "Interactive Judge Mode",
-                feat_2_desc: "Branching logic handles complicated scenarios like Werewords token tallies, Salem dawn accusations, and night elimination checks without manual notes.",
-                feat_3_title: "Presets & Quick Rematch",
-                feat_3_desc: "Save your regular game night roster configs into favorite presets. Hit 'Quick Rematch' after a game ends to jump right into round two in 1 tap.",
-                feat_4_title: "Tavern Ambiance Music",
-                feat_4_desc: "One-tap quick launcher for Apple Music, Spotify, and YouTube Music. Mix atmospheric tavern medieval background music alongside the voice narrator.",
-                feat_5_title: "iOS 17 Sensory Experience",
-                feat_5_desc: "Built natively in SwiftUI with iOS 17 sensory feedback. Keep-awake screen control prevents dark lockouts during long discussion phases.",
-                feat_6_title: "Trilingual Localization",
-                feat_6_desc: "Full voice and interface localization in English, Simplified Chinese (简体中文), and Spanish (Español) for international tabletop groups.",
+                feat_1_title: "Local Wi-Fi Secret Room",
+                feat_1_desc: "Create a peer-to-peer room over local Wi-Fi or hotspot with zero internet required. Automatically deal 3D secret role cards and collect anonymous quest votes on each player's phone.",
+                feat_2_title: "Avalon Probability Solver",
+                feat_2_desc: "Bayesian deduction engine computes real-time Merlin, Morgana, Percival, and Minion probabilities from mission teams and vote patterns for deep post-game analysis.",
+                feat_3_title: "Studio Trilingual Audio",
+                feat_3_desc: "High-fidelity studio voice packs in English, Simplified Chinese, and Spanish, plus a built-in Voice Studio to record custom party narration and save favorite presets.",
+                feat_4_title: "Interactive Judge & Catalog",
+                feat_4_desc: "Branching judge workflows for Werewords and Salem 1692 alongside an offline BGG-curated tabletop rules vault with recommended player counts and role lineups.",
+                feat_5_title: "iPhone Duo & iPad Ready",
+                feat_5_desc: "Seamless folded-to-unfolded continuity on iPhone Duo, iPad Split View multitasking, tactile haptics, and automatic screen keep-awake during night phases.",
+                feat_6_title: "Optional Lifetime PRO",
+                feat_6_desc: "100% free core features with optional one-time Lifetime Ad-Free PRO (Family Sharing & Restore Purchases supported) or a 24-hour rewarded ad-free pass.",
                 cta_tag: "Ready for Your Next Game Night?",
                 cta_title: "Elevate your board game gatherings <em class=\"italic\">tonight</em>.",
                 cta_desc: "Download Board Game Audio Assistant free on the App Store. Setup a 7-player Avalon or One Night Werewolf game in under 30 seconds.",
                 cta_store_btn: "Download on App Store",
                 cta_feedback: "Contact Developer",
-                cta_note: "Requires iOS 17.0 or later · Compatible with iPhone and iPad",
-                footer_desc: "An unofficial tabletop companion app providing voice guidance, flow management, and smart judge utilities for social deduction board games.",
+                cta_note: "Requires iOS 18.0 or later · Compatible with iPhone, iPhone Duo, and iPad",
+                footer_desc: "An unofficial tabletop companion app providing voice guidance, local Wi-Fi secret dealing, and smart judge utilities for social deduction board games.",
                 footer_games: "Games",
                 footer_resources: "Resources",
-                legal_disclaimer: "<strong>Disclaimer:</strong> Board Game Audio Assistant is an unofficial educational and entertainment utility. Game rules, roles, and voice narratives are provided solely for player convenience and learning purposes. All copyrights, trademarks, and intellectual property rights relating to the respective board games (such as Avalon, One Night Ultimate Werewolf, Salem 1692, Cheese Thief, Blood and Blade, and Werewords) belong strictly to their original authors and publishers.",
-                footer_version_tag: "iOS Release v1.2.1 (Build 13) · Designed with Retro Aesthetics"
+                legal_disclaimer: "<strong>Disclaimer:</strong> Board Game Audio Assistant is an unofficial educational and entertainment utility. Game rules, roles, and voice narratives are provided solely for player convenience and learning purposes. All copyrights, trademarks, and intellectual property rights relating to the respective board games (such as Avalon, One Night Ultimate Werewolf, Salem 1692, Dying Message, Cheese Thief, Blood and Blade, and Werewords) belong strictly to their original authors and publishers.",
+                footer_version_tag: "iOS Release v1.2.5 (Build 18) · Designed with Retro Aesthetics"
             },
             zh: {
                 brand_name: "桌游语音助手",
@@ -787,15 +837,15 @@
                 hero_desc: "彻底告别眯眼偷看、遗漏夜间口令与费心核算规则的尴尬局面。桌游语音助手将录音棚专业级播报、互动分支法官与便携实用工具箱融为一体，让每一次朋友聚会都能瞬间进入游戏巅峰状态。",
                 download_label: "立即下载自",
                 btn_explore: "浏览支持桌游",
-                badge_games_count: "已适配 6 款热门桌游",
+                badge_games_count: "已适配 7 款热门桌游",
                 badge_languages: "简体中文 · English · Español",
-                badge_offline: "100% 本地离线可用",
+                badge_offline: "局域网直连 & 100% 离线可用",
                 hero_audio_step: "步骤 03 · 夜间行动",
                 hero_audio_quote: "“梅林请睁眼，看清这黑夜中的爪牙…”",
                 tag_games_library: "支持游戏矩阵",
                 title_games_library: "经典阵营推理与聚会策略桌游",
                 subtitle_games_library: "每款游戏均配有精细打磨的停顿秒数、全角色精美立绘与防剧透流程引导。",
-                filter_all: "全部游戏 (6)",
+                filter_all: "全部游戏 (7)",
                 filter_host: "纯语音主持模式",
                 filter_interactive: "互动法官模式",
                 badge_host: "语音主持",
@@ -824,6 +874,10 @@
                 game_werewords_players: "4–10 人对局",
                 game_werewords_theme: "魔法密词推理",
                 game_werewords_desc: "交互法官独占模式：镇长秘密选词、4分钟猜词倒计时、是/否/也许标记扣减与终局狼人抓预言家判定。",
+                game_dying_name: "请留遗言",
+                game_dying_players: "4–15 人对局",
+                game_dying_theme: "犯罪现场线索推理",
+                game_dying_desc: "完整支持法医、凶手、帮凶、目击者、侦探与警犬夜间睁眼闭眼语音引导，轻松掌控大型聚会破案节奏。",
                 label_roles: "核心角色",
                 label_mechanic: "核心机制",
                 step_1_tag: "阶段：天黑请闭眼",
@@ -862,32 +916,32 @@
                 tool_score_title: "实时计分板",
                 tool_score_desc: "自定义玩家昵称、快速加减分（-99至999）、一键归零以及按总得分一键降序排行。",
                 btn_score_add: "+2 分",
-                tag_features: "v1.2.1 全新架构",
+                tag_features: "v1.2.5 全新架构",
                 title_features: "资深桌游玩家，为桌游玩家打造",
                 subtitle_features: "从零构建于原生 SwiftUI，专为聚会、团建与桌游吧现场的高效开局而生。",
-                feat_1_title: "双轨音频引擎",
-                feat_1_desc: "录音棚真实人声录音，搭配 Apple Neural TTS 及 Google Cloud TTS 降级容灾，无论在线离线都顺畅开局。",
-                feat_2_title: "交互分支法官",
-                feat_2_desc: "针对《狼人箴言》记词、《猎巫镇》审判等场景提供交互弹窗与分支判定，告别手忙脚乱记录纸牌。",
-                feat_3_title: "阵容预设与一键重开",
-                feat_3_desc: "常玩阵容一键保存为模版。对局结束后点击“再来一局”，无需重新配置即可立即展开第二轮对抗。",
-                feat_4_title: "外接音乐播放器联动",
-                feat_4_desc: "内置快捷启动 Apple Music、Spotify 与 YouTube Music，为主持人一键点播酒馆与中世纪背景氛围音乐。",
-                feat_5_title: "iOS 17 触觉与常亮",
-                feat_5_desc: "完全适配 iOS 17 动态振动引擎与屏幕防休眠，让主持人即使置身嘈杂客厅也能稳如泰山。",
-                feat_6_title: "全球三语本地化",
-                feat_6_desc: "完整支持简体中文、英语及西班牙语界面与语音播报，满足跨国朋友聚会与国际桌游交流需求。",
+                feat_1_title: "面对面局域网建房发牌",
+                feat_1_desc: "无需外网连接，仅靠同 Wi-Fi 或手机热点即可多机直连建房，自动分发 3D 身份暗牌并完成任务匿名投票。",
+                feat_2_title: "阿瓦隆贝叶斯概率推演",
+                feat_2_desc: "根据每轮车队提名与投票票型，实时计算每位玩家为梅林、莫甘娜、派西维尔或爪牙的后验概率，助力深度复盘。",
+                feat_3_title: "中英西三语录音棚引擎",
+                feat_3_desc: "内置高清中、英、西三语专业配音，并配备专属录音工坊录制好友搞笑主持语音，支持常用板子一键预设重开。",
+                feat_4_title: "交互分支法官与规则百科",
+                feat_4_desc: "针对《狼人箴言》《猎巫镇》提供交互分支判定，同时内置离线 BGG 桌游百科，速查人数配置与夜晚行动顺序。",
+                feat_5_title: "iPhone Duo 折叠屏与 iPad 适配",
+                feat_5_desc: "完美支持 iPhone Duo 折叠内外屏无缝连续切换与 iPad 多任务分屏，配备细腻触觉反馈与屏幕常亮防休眠。",
+                feat_6_title: "终身免广告专业版可选",
+                feat_6_desc: "全部核心桌游工具免费开放，提供可选的一次性买断终身免广告专业版（支持家人共享与恢复购买）及 24 小时免广告通行证。",
                 cta_tag: "准备好迎接下一场桌游夜了吗？",
                 cta_title: "今晚就让桌游夜变得 <em class=\"italic\">更精彩</em>。",
                 cta_desc: "前往 App Store 免费下载桌游语音助手。30 秒内即可快速开启一局 7 人阿瓦隆或一夜狼人杀。",
                 cta_store_btn: "前往 App Store 下载",
                 cta_feedback: "联系开发者反馈",
-                cta_note: "适配 iOS 17.0 或更高版本 · 支持 iPhone 与 iPad 设备",
-                footer_desc: "非官方桌游辅助工具，提供沉浸式语音播报、流程管理与法官判定功能，聚焦阵营推理类桌游。",
+                cta_note: "适配 iOS 18.0 或更高版本 · 原生支持 iPhone、iPhone Duo 与 iPad",
+                footer_desc: "非官方桌游辅助工具，提供沉浸式语音播报、局域网秘密发牌与法官判定功能，聚焦阵营推理类桌游。",
                 footer_games: "支持桌游",
                 footer_resources: "服务与合规",
-                legal_disclaimer: "<strong>版权与合规免责声明：</strong>桌游语音助手为非官方教育与个人娱乐辅助工具。应用内提供的游戏规则、角色信息及语音台词仅供玩家学习、研究与线下娱乐使用。所有相关桌游（包括《阿瓦隆》、《一夜终极狼人》、《猎巫镇 1692》、《奶酪大盗》、《血与刃的白蔷薇》、《狼人箴言》等）的版权与商标权均归原版权方所有。",
-                footer_version_tag: "iOS 正式发布版 v1.2.1 (Build 13) · 复古桌游质感设计"
+                legal_disclaimer: "<strong>版权与合规免责声明：</strong>桌游语音助手为非官方教育与个人娱乐辅助工具。应用内提供的游戏规则、角色信息及语音台词仅供玩家学习、研究与线下娱乐使用。所有相关桌游（包括《阿瓦隆》、《一夜终极狼人》、《猎巫镇 1692》、《请留遗言》、《奶酪大盗》、《血与刃的白蔷薇》、《狼人箴言》等）的版权与商标权均归原版权方所有。",
+                footer_version_tag: "iOS 正式发布版 v1.2.5 (Build 18) · 复古桌游质感设计"
             }
         };
 
