@@ -22,24 +22,95 @@
     <meta name="twitter:description" content="Studio voice guidance, interactive judge mode, and tabletop tools for Avalon, One Night Werewolf, Salem 1692, and more.">
     <meta name="twitter:image" content="assets/og_image_share.png">
     
+    <meta name="apple-itunes-app" content="app-id=6755318411">
     <link rel="icon" type="image/png" href="assets/app_icon.png">
     <link rel="apple-touch-icon" href="assets/app_icon.png">
     <link rel="stylesheet" href="index.css">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Board Game Audio Assistant",
-      "operatingSystem": "iOS 18.0+, iPadOS 18.0+",
-      "applicationCategory": "UtilitiesApplication",
-      "softwareVersion": "1.2.5",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "url": "https://boardgameaudioassistant.netlify.app/",
-      "downloadUrl": "https://apps.apple.com/app/id6755318411"
+      "@graph": [
+        {
+          "@type": "MobileApplication",
+          "name": "Board Game Audio Assistant",
+          "description": "Board Game Audio Assistant is an offline iPhone and iPad app that acts as an automated voice narrator, local Wi-Fi secret role dealer, and tabletop toolkit for social deduction and party board games — requiring zero internet connection or user account.",
+          "operatingSystem": "iOS 18.0+, iPadOS 18.0+",
+          "applicationCategory": "UtilitiesApplication",
+          "inLanguage": ["en-US", "zh-Hans", "zh-Hant", "ja", "ko", "de-DE", "fr-FR", "es-MX", "pt-BR"],
+          "softwareVersion": "1.3.0",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "ratingCount": "2"
+          },
+          "url": "https://boardgameaudioassistant.netlify.app/",
+          "downloadUrl": "https://apps.apple.com/app/id6755318411",
+          "installUrl": "https://apps.apple.com/app/id6755318411",
+          "image": "https://boardgameaudioassistant.netlify.app/assets/app_icon.png",
+          "author": {
+            "@type": "Organization",
+            "name": "DevFang"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Does Board Game Audio Assistant work completely offline without internet or an account?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. All 1,008 studio voice narration files, 15 BGG board game rule references, dice rollers, countdown timers, and scoreboards run 100% offline on your iPhone or iPad with zero account registration. Even multi-phone role dealing and voting run over peer-to-peer local Wi-Fi or personal hotspot without internet."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which board games and languages include studio voice narration?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Built-in studio neural voice narration covers The Resistance: Avalon, One Night Ultimate Werewolf, Salem 1692 (Night & Dawn), Blood and Blade, Dying Message, Cheese Thief, and Werewords across 9 languages: English, Simplified Chinese, Traditional Chinese, Japanese, Korean, German, French, Spanish, and Brazilian Portuguese."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does Local Wi-Fi secret role dealing and anonymous voting work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "One player taps Create Local Room on their iPhone or iPad while friends on the same Wi-Fi or personal hotspot join instantly with a room code. Each player privately views their dealt 3D secret role card in their preferred language and casts encrypted mission votes without passing phones around."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How many players are supported, and does it run natively on iPad and iPhone Duo?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Hosted tabletop presets support 3 to 12+ players depending on the game ruleset, with automatic balanced role validation. The app is a Universal iOS 18+ and iPadOS 18+ build featuring adaptive Split View layouts on 13-inch iPad and seamless cover-to-inner continuity on iPhone Duo."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is Board Game Audio Assistant free, or does it require a recurring subscription?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Core voice hosting, all 9 language voice packs, local Wi-Fi rooms, the Avalon Bayesian probability solver, and the 4-in-1 tabletop toolbox are free to use. An optional one-time Lifetime Ad-Free PRO In-App Purchase removes all ads permanently with Apple Family Sharing and zero subscriptions."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I record custom voice packs or build custom night-phase scripts?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. The built-in Voice Recording Studio lets you record personalized friend or character voice lines on-device using your microphone, and the Custom Script Builder supports creating or importing JSON night-phase flows with automatic text-to-speech fallback."
+              }
+            }
+          ]
+        }
+      ]
     }
     </script>
 </head>
@@ -56,7 +127,7 @@
                 </div>
                 <div class="brand-title">
                     <span class="brand-name" data-i18n="brand_name">Board Game Audio</span>
-                    <span class="brand-version version-pill">v1.2.5 · iOS 18+</span>
+                    <span class="brand-version version-pill">v1.3.0 · iOS 18+</span>
                 </div>
             </a>
 
@@ -584,9 +655,9 @@
 
                     <div class="feature-box">
                         <div class="feature-icon-wrapper box-red">🎙️</div>
-                        <h3 class="feature-title" data-i18n="feat_3_title">Studio Trilingual Audio</h3>
+                        <h3 class="feature-title" data-i18n="feat_3_title">Studio 9-Language Audio</h3>
                         <p class="feature-description" data-i18n="feat_3_desc">
-                            High-fidelity studio voice packs in English, Simplified Chinese, and Spanish, plus a built-in Voice Studio to record custom party narration and save favorite presets.
+                            High-fidelity studio voice packs across 9 languages (EN, ZH-Hans, ZH-Hant, JA, KO, DE, FR, ES, PT-BR), Siri Shortcuts, and an on-device Voice Recording Studio.
                         </p>
                     </div>
 
@@ -612,6 +683,45 @@
                         <p class="feature-description" data-i18n="feat_6_desc">
                             100% free core features with optional one-time Lifetime Ad-Free PRO (Family Sharing &amp; Restore Purchases supported) or a 24-hour rewarded ad-free pass.
                         </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================================================
+             FAQ SECTION (GEO CITABLE BLOCK)
+             ============================================================================== -->
+        <section id="faq" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">FAQ · Tabletop Guide</span>
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Quick answers on offline play, supported games, 9-language studio voice packs, and local Wi-Fi secret role dealing.</p>
+                </div>
+                <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+                    <div class="feature-box">
+                        <h3 class="feature-title">Does Board Game Audio Assistant work completely offline without internet or an account?</h3>
+                        <p class="feature-description">Yes. All 1,008 studio voice narration files, 15 BGG board game rule references, dice rollers, countdown timers, and scoreboards run 100% offline on your iPhone or iPad with zero account registration. Even multi-phone role dealing and voting run over peer-to-peer local Wi-Fi or personal hotspot without internet.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3 class="feature-title">Which board games and languages include studio voice narration?</h3>
+                        <p class="feature-description">Built-in studio neural voice narration covers The Resistance: Avalon, One Night Ultimate Werewolf, Salem 1692 (Night &amp; Dawn), Blood and Blade, Dying Message, Cheese Thief, and Werewords across 9 languages: English, Simplified Chinese, Traditional Chinese, Japanese, Korean, German, French, Spanish, and Brazilian Portuguese.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3 class="feature-title">How does Local Wi-Fi secret role dealing and anonymous voting work?</h3>
+                        <p class="feature-description">One player taps Create Local Room on their iPhone or iPad while friends on the same Wi-Fi or personal hotspot join instantly with a room code. Each player privately views their dealt 3D secret role card in their preferred language and casts encrypted mission votes without passing phones around.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3 class="feature-title">How many players are supported, and does it run natively on iPad and iPhone Duo?</h3>
+                        <p class="feature-description">Hosted tabletop presets support 3 to 12+ players depending on the game ruleset, with automatic balanced role validation. The app is a Universal iOS 18+ and iPadOS 18+ build featuring adaptive Split View layouts on 13-inch iPad and seamless cover-to-inner continuity on iPhone Duo.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3 class="feature-title">Is Board Game Audio Assistant free, or does it require a recurring subscription?</h3>
+                        <p class="feature-description">Core voice hosting, all 9 language voice packs, local Wi-Fi rooms, the Avalon Bayesian probability solver, and the 4-in-1 tabletop toolbox are free to use. An optional one-time Lifetime Ad-Free PRO In-App Purchase removes all ads permanently with Apple Family Sharing and zero subscriptions.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3 class="feature-title">Can I record custom voice packs or build custom night-phase scripts?</h3>
+                        <p class="feature-description">Yes. The built-in Voice Recording Studio lets you record personalized friend or character voice lines on-device using your microphone, and the Custom Script Builder supports creating or importing JSON night-phase flows with automatic text-to-speech fallback.</p>
                     </div>
                 </div>
             </div>
@@ -690,7 +800,7 @@
 
             <div class="footer-bottom">
                 <p>&copy; 2026 Board Game Audio Assistant. All rights reserved.</p>
-                <p data-i18n="footer_version_tag">iOS Release v1.2.5 (Build 18) · Designed with Retro Aesthetics</p>
+                <p data-i18n="footer_version_tag">iOS Release v1.2.5 (Build 19) · Designed with Retro Aesthetics</p>
             </div>
         </div>
     </footer>
@@ -717,7 +827,7 @@
                 download_label: "Download On The",
                 btn_explore: "Explore Games",
                 badge_games_count: "7 Supported Games",
-                badge_languages: "English · 中文 · Español",
+                badge_languages: "9 Studio Languages (EN · 中文 · 日本語 · 한국어 · EU)",
                 badge_offline: "Local Wi-Fi & 100% Offline",
                 hero_audio_step: "Step 03 · Night Phase",
                 hero_audio_quote: "\"Merlin, open your eyes to see evil...\"",
@@ -802,8 +912,8 @@
                 feat_1_desc: "Create a peer-to-peer room over local Wi-Fi or hotspot with zero internet required. Automatically deal 3D secret role cards and collect anonymous quest votes on each player's phone.",
                 feat_2_title: "Avalon Probability Solver",
                 feat_2_desc: "Bayesian deduction engine computes real-time Merlin, Morgana, Percival, and Minion probabilities from mission teams and vote patterns for deep post-game analysis.",
-                feat_3_title: "Studio Trilingual Audio",
-                feat_3_desc: "High-fidelity studio voice packs in English, Simplified Chinese, and Spanish, plus a built-in Voice Studio to record custom party narration and save favorite presets.",
+                feat_3_title: "Studio 9-Language Audio",
+                feat_3_desc: "High-fidelity studio voice packs across 9 languages (EN, ZH-Hans, ZH-Hant, JA, KO, DE, FR, ES, PT-BR), Siri Shortcuts, and an on-device Voice Recording Studio.",
                 feat_4_title: "Interactive Judge & Catalog",
                 feat_4_desc: "Branching judge workflows for Werewords and Salem 1692 alongside an offline BGG-curated tabletop rules vault with recommended player counts and role lineups.",
                 feat_5_title: "iPhone Duo & iPad Ready",
@@ -820,7 +930,7 @@
                 footer_games: "Games",
                 footer_resources: "Resources",
                 legal_disclaimer: "<strong>Disclaimer:</strong> Board Game Audio Assistant is an unofficial educational and entertainment utility. Game rules, roles, and voice narratives are provided solely for player convenience and learning purposes. All copyrights, trademarks, and intellectual property rights relating to the respective board games (such as Avalon, One Night Ultimate Werewolf, Salem 1692, Dying Message, Cheese Thief, Blood and Blade, and Werewords) belong strictly to their original authors and publishers.",
-                footer_version_tag: "iOS Release v1.2.5 (Build 18) · Designed with Retro Aesthetics"
+                footer_version_tag: "iOS Release v1.2.5 (Build 19) · Designed with Retro Aesthetics"
             },
             zh: {
                 brand_name: "桌游语音助手",
@@ -838,7 +948,7 @@
                 download_label: "立即下载自",
                 btn_explore: "浏览支持桌游",
                 badge_games_count: "已适配 7 款热门桌游",
-                badge_languages: "简体中文 · English · Español",
+                badge_languages: "全 9 语种配音（简繁中 · 英 · 日 · 韩 · 德法西葡）",
                 badge_offline: "局域网直连 & 100% 离线可用",
                 hero_audio_step: "步骤 03 · 夜间行动",
                 hero_audio_quote: "“梅林请睁眼，看清这黑夜中的爪牙…”",
@@ -923,8 +1033,8 @@
                 feat_1_desc: "无需外网连接，仅靠同 Wi-Fi 或手机热点即可多机直连建房，自动分发 3D 身份暗牌并完成任务匿名投票。",
                 feat_2_title: "阿瓦隆贝叶斯概率推演",
                 feat_2_desc: "根据每轮车队提名与投票票型，实时计算每位玩家为梅林、莫甘娜、派西维尔或爪牙的后验概率，助力深度复盘。",
-                feat_3_title: "中英西三语录音棚引擎",
-                feat_3_desc: "内置高清中、英、西三语专业配音，并配备专属录音工坊录制好友搞笑主持语音，支持常用板子一键预设重开。",
+                feat_3_title: "全九语种录音棚引擎",
+                feat_3_desc: "内置简繁中、英、日、韩、德、法、西、葡 9 语种专业配音与 Siri 快捷指令，并配备专属录音工坊录制好友主持语音。",
                 feat_4_title: "交互分支法官与规则百科",
                 feat_4_desc: "针对《狼人箴言》《猎巫镇》提供交互分支判定，同时内置离线 BGG 桌游百科，速查人数配置与夜晚行动顺序。",
                 feat_5_title: "iPhone Duo 折叠屏与 iPad 适配",
@@ -941,7 +1051,7 @@
                 footer_games: "支持桌游",
                 footer_resources: "服务与合规",
                 legal_disclaimer: "<strong>版权与合规免责声明：</strong>桌游语音助手为非官方教育与个人娱乐辅助工具。应用内提供的游戏规则、角色信息及语音台词仅供玩家学习、研究与线下娱乐使用。所有相关桌游（包括《阿瓦隆》、《一夜终极狼人》、《猎巫镇 1692》、《请留遗言》、《奶酪大盗》、《血与刃的白蔷薇》、《狼人箴言》等）的版权与商标权均归原版权方所有。",
-                footer_version_tag: "iOS 正式发布版 v1.2.5 (Build 18) · 复古桌游质感设计"
+                footer_version_tag: "iOS 正式发布版 v1.2.5 (Build 19) · 复古桌游质感设计"
             }
         };
 

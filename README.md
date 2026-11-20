@@ -1,7 +1,7 @@
 # Board Game Audio Assistant Official Website (`Avalon_audio_asasistant_website`)
 
 > **绑定 iOS 应用**：Board Game Audio Assistant (`6755318411` / `com.devfang.AvalonAudioAssistant`)
-> **Synchronized App Version**: `v1.2.5` (Build `18`)
+> **Synchronized App Version**: `v1.3.0` (Build `18`)
 > **本地客户端源码**：[`../Avalon_Audio_Assistant`](../Avalon_Audio_Assistant)
 > **Netlify 站点名称**：`boardgameaudioassistant` (`ed420010-72bc-453f-8a02-5b1d2219214b`)
 > **生产环境域名**：https://boardgameaudioassistant.netlify.app/
