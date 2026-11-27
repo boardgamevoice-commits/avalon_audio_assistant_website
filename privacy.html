@@ -102,7 +102,7 @@
                 </div>
                 <div class="brand-title">
                     <span class="brand-name">Board Game Audio</span>
-                    <span class="brand-version version-pill">v1.3.0</span>
+                    <span class="brand-version version-pill">v1.3.1</span>
                 </div>
             </a>
 
@@ -124,7 +124,7 @@
             <div class="policy-header">
                 <span class="section-tag">Legal &amp; Compliance</span>
                 <h1 class="policy-title">Privacy Policy</h1>
-                <div class="policy-meta">Last Updated: November 2026 · App Version 1.3.0</div>
+                <div class="policy-meta">Last Updated: November 2026 · App Version 1.3.1</div>
             </div>
 
             <div class="policy-section">
@@ -150,6 +150,9 @@
                         <strong>Local Wi-Fi Room (<code>NSLocalNetworkUsageDescription</code>, Optional):</strong> Requested only when hosting or joining a nearby game room over the same Wi-Fi or personal hotspot via Bonjour (<code>_avalon-room._tcp</code>). Secret role dealing and mission votes travel strictly peer-to-peer between local devices without touching cloud servers.
                     </li>
                     <li>
+                        <strong>Photo Library Save Permission (<code>NSPhotoLibraryAddUsageDescription</code>, Optional):</strong> Requested only if you explicitly choose "Save Image" in the iOS Share Sheet when exporting a vintage party match chronicle card. We never read or scan your photo library.
+                    </li>
+                    <li>
                         <strong>No Personal Identity Collection:</strong> We never ask for or collect your name, phone number, email address, contacts, GPS coordinates, or payment card details.
                     </li>
                 </ul>
@@ -165,7 +168,7 @@
             <div class="policy-section">
                 <h2>4. Advertising, UMP Consent &amp; ATT (Google AdMob)</h2>
                 <p>
-                    The free tier of Board Game Audio Assistant utilizes <strong>Google AdMob</strong> (and Google User Messaging Platform, <strong>UMP</strong>, for GDPR/regional privacy consent) to display banner, interstitial, and optional 24-hour rewarded ad-free pass advertisements.
+                    Outside restricted regions (such as China Mainland, where the app operates in 100% pure-offline mode with AdMob and optional Cloud AI recap completely disabled based on StoreKit 2 Storefront), the free tier uses <strong>Google AdMob</strong> (and Google User Messaging Platform, <strong>UMP</strong>, for GDPR/regional privacy consent) solely for infrequent end-of-game interstitials and optional 24-hour rewarded ad-free passes — with zero banner ads app-wide.
                 </p>
                 <ul>
                     <li>
@@ -204,7 +207,7 @@
             <div class="policy-header">
                 <span class="section-tag">隐私与合规声明</span>
                 <h1 class="policy-title">隐私政策</h1>
-                <div class="policy-meta">更新日期：2026年11月 · 同步版本 v1.3.0</div>
+                <div class="policy-meta">更新日期：2026年11月 · 同步版本 v1.3.1</div>
             </div>
 
             <div class="policy-section">
@@ -220,20 +223,21 @@
                     <li><strong>本地偏好与备份隔离：</strong>语言、语速、音量及历史记分保存在本地 <code>UserDefaults</code> 与应用沙盒中，可重建缓存目录声明 <code>isExcludedFromBackup = true</code>。</li>
                     <li><strong>麦克风权限（可选）：</strong>仅在您主动进入“录音工坊”录制自定义主持语音时请求，录音文件严格保存在本机沙盒，绝不上传至任何服务器。</li>
                     <li><strong>本地局域网权限（可选）：</strong>仅在您主动创建或加入面对面同 Wi-Fi 房间（Bonjour <code>_avalon-room._tcp</code>）时请求，秘密发牌与投票数据仅在局域网设备间点对点传输，不经过外网云端。</li>
+                    <li><strong>相册写入权限（可选）：</strong>仅在您导出复古羊皮纸战报长图并在系统分享面板中主动选择“存储图像”时请求，绝不读取或扫描您的相册内容。</li>
                 </ul>
             </div>
 
             <div class="policy-section">
-                <h2>3. StoreKit 2 应用内购买与免广告权益</h2>
+                <h2>3. StoreKit 2 应用内购买与专业版权益</h2>
                 <p>
-                    应用提供可选的一次性买断内购（<strong>终身免广告专业版</strong>，<code>com.avalon.lifetime_pro</code>，支持 Apple 家人共享与一键<strong>恢复购买</strong>）。所有支付均由 Apple 官方 <strong>StoreKit 2</strong> 安全处理，开发者不会接触或存储任何支付账户信息。解锁专业版后，应用将在本地永久关闭广告请求。
+                    应用提供可选的一次性买断内购（<strong>终身专业版</strong>，<code>com.avalon.lifetime_pro</code>，支持 Apple 家人共享与一键<strong>恢复购买</strong>）。所有支付均由 Apple 官方 <strong>StoreKit 2</strong> 安全处理，开发者不会接触或存储任何支付账户信息。
                 </p>
             </div>
 
             <div class="policy-section">
-                <h2>4. 广告服务、UMP 同意框架与 ATT 追踪透明</h2>
+                <h2>4. 区域离线合规、广告服务与 ATT 追踪透明</h2>
                 <p>
-                    免费版集成 <strong>Google AdMob</strong>（含 Google UMP 隐私同意弹窗与可选 24 小时激励视频免广告通行证）。在 iOS 14.5+ 设备上，应用遵循 Apple <strong>App Tracking Transparency（ATT）</strong>规范征求授权；若您选择“要求应用不跟踪”，仅展示非个性化上下文广告。授权卖家记录详见 <a href="/app-ads.txt" style="color: var(--accent-teal); text-decoration: underline;">/app-ads.txt</a>（<code>pub-2034595640300550</code>）。
+                    中国大陆等受限地区（依据 StoreKit 2 App Store 商店区域 <code>Storefront == CHN</code> 与本地兜底自动识别）完全以 <strong>100% 纯本地离线模式</strong>运行，自动关闭广告 SDK 与海外云端功能。在海外非受限地区，免费版已全面移除横幅广告，仅通过 <strong>Google AdMob</strong>（含 Google UMP 隐私同意弹窗与 Apple ATT 授权框架）提供低频离场插屏与可选 24 小时激励免广告通道。授权卖家记录详见 <a href="/app-ads.txt" style="color: var(--accent-teal); text-decoration: underline;">/app-ads.txt</a>（<code>pub-2034595640300550</code>）。
                 </p>
             </div>
 

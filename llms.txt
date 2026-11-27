@@ -1,25 +1,26 @@
 # Board Game Audio Assistant
 
-> Hands-free 9-language offline voice narrator, local Wi-Fi secret role dealer, Bayesian probability solver, and tabletop toolkit for Avalon, One Night Werewolf, Salem 1692, and party board games on iPhone and iPad.
+> Hands-free 9-language offline voice narrator, local Wi-Fi secret role dealer, offline rule lookup, party stats chronicle, and Bayesian probability solver for Avalon, Blood on the Clocktower, Classic Werewolf, Secret Hitler, and party board games on iPhone and iPad.
 
-Board Game Audio Assistant is an offline iPhone and iPad app that acts as an automated voice narrator, local Wi-Fi secret role dealer, and tabletop toolkit for social deduction and party board games — requiring zero internet connection or user account. Nobody sits out as a human moderator: everyone closes their eyes and plays together.
+Board Game Audio Assistant is an offline iPhone and iPad app that acts as an automated voice narrator, local Wi-Fi secret role dealer, offline rulebook, and tabletop toolkit for social deduction and party board games — requiring zero internet connection or user account. Nobody sits out as a human moderator: everyone closes their eyes and plays together.
 
 ## Key features
 
-- Studio-Grade 9-Language Voice Host: Crystal-clear night-phase voice scripts in English, Simplified Chinese, Traditional Chinese, Japanese, Korean, German, French, Spanish, and Portuguese for The Resistance: Avalon, One Night Ultimate Werewolf, Salem 1692, Blood and Blade, Dying Message, Cheese Thief, Werewords, and custom party scripts.
-- Local Wi-Fi Room (Cross-Language Role Dealing & Voting): Host a peer-to-peer room over local Wi-Fi or personal hotspot so players view secret roles and cast mission votes on their own phones in their preferred language.
-- Avalon Bayesian Probability Solver: Track mission teams and vote history to calculate real-time Merlin, Morgana, Percival, and Minion probabilities.
-- Siri & Spotlight Shortcuts + Custom Voice Studio: Trigger favourite games hands-free with Siri or the Action Button, and record custom night-phase voice packs saved locally on your device.
-- BGG Catalog & 4-in-1 Tabletop Toolbox: Offline quick rules, multi-sided dice roller, random first-player picker, speech countdown timers, and persistent scoreboards.
-- Official Support Email: fangdev1063@gmail.com
-- Official Website: https://boardgameaudioassistant.netlify.app/
-- Optional Lifetime PRO: One-time In-App Purchase removes all ads permanently with Family Sharing and Restore Purchases support.
+- Studio-Grade 9-Language Voice Host (1,638 Audio Files): Crystal-clear offline night-phase scripts with Beginner, Standard, and Veteran pacing presets across English, Simplified Chinese, Traditional Chinese, Japanese, Korean, German, French, Spanish, and Portuguese for The Resistance: Avalon, Blood on the Clocktower (Trouble Brewing), multi-night Classic Werewolf, One Night Ultimate Werewolf & Daybreak, Secret Chancellor (Secret Hitler), The Resistance, Salem 1692, Blood and Blade, Dying Message, Cheese Thief, and Werewords.
+- Multi-Game Local Wi-Fi Rooms (Zero Internet): Host a peer-to-peer room over local Wi-Fi or personal hotspot via 4-digit code or QR scan so players view secret roles and cast votes or night actions on their own phones in their preferred language.
+- 100% Offline 9-Language Rule Lookup (174 Official Rulings): Instant edge-case rule rulings across 9 social deduction games with one-tap current-role chips in airplane mode.
+- Avalon Bayesian Probability Solver, Party Stats & 3x Parchment Share Cards: Compute real-time role probabilities, review on-device Avalon post-game recaps, track faction win rates, and export vintage match chronicle cards.
+- Custom Script Builder (.bgaa AirDrop Sharing), Siri Shortcuts & 4-in-1 Toolbox: Record personalized voice packs, share .bgaa scripts with friends for free, launch via Siri or Action Button, and access multi-sided dice, first-player picker, timers, scoreboards, and 17 BGG game guides.
+- Optional Lifetime PRO: Zero banner ads app-wide; one-time In-App Purchase removes interstitial ads permanently with Family Sharing, room-wide host sponsorship, full party stats, and unlimited custom scripts.
 
 ## Facts
 
+- Version: 1.3.1
 - Category: Utilities
-- Platform: iPhone / iPad
+- Platform: iPhone / iPad / iPhone Duo
 - Price: Free (Optional One-Time Lifetime Ad-Free PRO)
+- Offline Audio Files: 1,638 across 9 languages
+- Offline Rule Lookup: 174 official rulings across 9 social deduction games
 
 ## Links
 
@@ -33,24 +34,24 @@ Board Game Audio Assistant is an offline iPhone and iPad app that acts as an aut
 
 ### Does Board Game Audio Assistant work completely offline without internet or an account?
 
-Yes. All 1,008 studio voice narration files, 15 BGG board game rule references, dice rollers, countdown timers, and scoreboards run 100% offline on your iPhone or iPad with zero account registration. Even multi-phone role dealing and voting run over peer-to-peer local Wi-Fi or personal hotspot without internet.
+Yes. All 1,638 studio voice narration files, 174 offline rule lookup entries, 17 BGG board game references, party match history, dice rollers, countdown timers, and scoreboards run 100% offline on your iPhone or iPad with zero account registration. Even multi-phone secret role dealing and voting run peer-to-peer over local Wi-Fi or personal hotspot without internet.
 
 ### Which board games and languages include studio voice narration?
 
-Built-in studio neural voice narration covers The Resistance: Avalon, One Night Ultimate Werewolf, Salem 1692 (Night & Dawn), Blood and Blade, Dying Message, Cheese Thief, and Werewords across 9 languages: English, Simplified Chinese, Traditional Chinese, Japanese, Korean, German, French, Spanish, and Brazilian Portuguese.
+Built-in studio neural voice narration and tabletop modules cover The Resistance: Avalon, Blood on the Clocktower (Trouble Brewing), multi-night Classic Werewolf, One Night Ultimate Werewolf & Daybreak, Secret Chancellor (Secret Hitler), The Resistance, Salem 1692, Blood and Blade, Dying Message, Cheese Thief, and Werewords across 9 languages: English, Simplified Chinese, Traditional Chinese, Japanese, Korean, German, French, Spanish, and Brazilian Portuguese.
 
 ### How does Local Wi-Fi secret role dealing and anonymous voting work?
 
-One player taps Create Local Room on their iPhone or iPad while friends on the same Wi-Fi or personal hotspot join instantly with a room code. Each player privately views their dealt 3D secret role card in their preferred language and casts encrypted mission votes without passing phones around.
+One player taps Create Local Room on their iPhone or iPad while friends on the same Wi-Fi or personal hotspot join with a 4-digit room code or QR scan. Each player privately views their dealt 3D secret role card in their own language and casts encrypted votes or night actions in Avalon, Blood on the Clocktower, Classic Werewolf, and Secret Chancellor without passing phones.
 
-### How many players are supported, and does it run natively on iPad and iPhone Duo?
+### Does it include offline rule lookup and party match stats?
 
-Hosted tabletop presets support 3 to 12+ players depending on the game ruleset, with automatic balanced role validation. The app is a Universal iOS 18+ and iPadOS 18+ build featuring adaptive Split View layouts on 13-inch iPad and seamless cover-to-inner continuity on iPhone Duo.
+Yes. The 100% offline Rule Lookup includes 174 official edge-case rulings across 9 social deduction games in all 9 languages, with current-role quick chips for instant answers in airplane mode. The Party Stats Dashboard tracks faction win rates and exports 3x vintage parchment match chronicle share cards on-device.
 
 ### Is Board Game Audio Assistant free, or does it require a recurring subscription?
 
-Core voice hosting, all 9 language voice packs, local Wi-Fi rooms, the Avalon Bayesian probability solver, and the 4-in-1 tabletop toolbox are free to use. An optional one-time Lifetime Ad-Free PRO In-App Purchase removes all ads permanently with Apple Family Sharing and zero subscriptions.
+Core voice hosting, all 1,638 9-language voice files, local Wi-Fi rooms, 174 offline rule rulings, Avalon local recap, and the 4-in-1 tabletop toolbox are free with zero banner ads and zero subscriptions. An optional one-time Lifetime Ad-Free PRO purchase removes interstitial ads permanently with Apple Family Sharing, host room-wide ad-free sessions, unlimited custom scripts, and watermark-free match cards.
 
-### Can I record custom voice packs or build custom night-phase scripts?
+### Can I record custom voice packs or share custom night-phase scripts with friends?
 
-Yes. The built-in Voice Recording Studio lets you record personalized friend or character voice lines on-device using your microphone, and the Custom Script Builder supports creating or importing JSON night-phase flows with automatic text-to-speech fallback.
+Yes. The built-in Voice Recording Studio saves personalized friend or character voice lines locally on your device, and the Custom Script Builder exports compact .bgaa script packages via AirDrop or Share Sheet so friends can preview and import custom night-phase flows for free.
